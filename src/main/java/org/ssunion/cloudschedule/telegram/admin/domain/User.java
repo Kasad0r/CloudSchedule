@@ -13,7 +13,7 @@ public class User {
     private String lastname;
     @Enumerated(EnumType.STRING)
     private Trigger trigger = Trigger.NONE;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Settings settings;
 
     public User() {

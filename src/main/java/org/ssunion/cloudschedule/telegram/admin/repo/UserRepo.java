@@ -4,5 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.ssunion.cloudschedule.telegram.admin.domain.User;
 
 public interface UserRepo extends JpaRepository<User, Long> {
-    User findByUserToken(long userToken);
+    User findByUserToken(long token);
+
+
 }
