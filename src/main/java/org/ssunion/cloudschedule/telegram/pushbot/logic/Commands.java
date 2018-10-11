@@ -1,11 +1,11 @@
-package org.ssunion.cloudschedule.telegram.admin.logic;
+package org.ssunion.cloudschedule.telegram.pushbot.logic;
 
-import org.ssunion.cloudschedule.telegram.admin.domain.Trigger;
-import org.ssunion.cloudschedule.telegram.admin.domain.User;
-import org.ssunion.cloudschedule.telegram.admin.menus.GroupMenu;
-import org.ssunion.cloudschedule.telegram.admin.menus.StaticMessages;
-import org.ssunion.cloudschedule.telegram.admin.menus.UserStatusMenu;
-import org.ssunion.cloudschedule.telegram.admin.repo.UserRepo;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.Trigger;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.GroupMenu;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.StaticMessages;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.UserStatusMenu;
+import org.ssunion.cloudschedule.telegram.pushbot.repo.UserRepo;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.util.ArrayList;

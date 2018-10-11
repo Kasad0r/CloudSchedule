@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.telegram.admin.menus;
+package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 

@@ -1,7 +1,7 @@
-package org.ssunion.cloudschedule.telegram.admin.menus;
+package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
-import org.ssunion.cloudschedule.telegram.admin.AdminBot;
-import org.ssunion.cloudschedule.telegram.admin.domain.User;
+import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
 public class UserStatusMenu {
@@ -15,6 +15,6 @@ public class UserStatusMenu {
                 "<i>Admin Notice: </i>" + (user.getSettings().isAdminNotice() ? "ON" : "OFF") +
                 "<i>Selected group: </i>" + user.getSettings().getSelectedGroup() +
                 "<i>Time To Send: </i>" + user.getSettings().getTimeToSendSchedule());
-        AdminBot.getInstance().push(sendMessage);
+        PushBot.getInstance().push(sendMessage);
     }
 }

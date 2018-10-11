@@ -1,19 +1,26 @@
-package org.ssunion.cloudschedule.telegram.admin.domain;
+package org.ssunion.cloudschedule.telegram.pushbot.domain;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "telegram_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "token")
     private long userToken;
+    @Column(name = "user_name")
     private String username;
+    @Column(name = "first")
     private String firstname;
+    @Column(name = "last")
     private String lastname;
+    @Column(name = "triggers")
     @Enumerated(EnumType.STRING)
     private Trigger trigger = Trigger.NONE;
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "settings_id")
     private Settings settings;
 
     public User() {

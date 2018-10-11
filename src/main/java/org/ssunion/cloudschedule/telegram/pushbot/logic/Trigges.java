@@ -1,17 +1,17 @@
-package org.ssunion.cloudschedule.telegram.admin.logic;
+package org.ssunion.cloudschedule.telegram.pushbot.logic;
 
-import org.ssunion.cloudschedule.telegram.admin.AdminBot;
-import org.ssunion.cloudschedule.telegram.admin.domain.Trigger;
-import org.ssunion.cloudschedule.telegram.admin.domain.User;
-import org.ssunion.cloudschedule.telegram.admin.menus.GroupMenu;
-import org.ssunion.cloudschedule.telegram.admin.menus.StaticMessages;
-import org.ssunion.cloudschedule.telegram.admin.repo.UserRepo;
+import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.Trigger;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.GroupMenu;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.StaticMessages;
+import org.ssunion.cloudschedule.telegram.pushbot.repo.UserRepo;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public final class Trigges {
     private UserRepo ur;
-    private AdminBot adminBot = AdminBot.getInstance();
+    private PushBot pushBot = PushBot.getInstance();
     private static Trigges trigges = new Trigges();
 
     private Trigges() {
@@ -24,8 +24,14 @@ public final class Trigges {
 
     //TODO В классе StringUtils можно парсить строку в LocalTime
     public void check(Update update) {
-        User user = ur.findByUserToken(update.getMessage().getChatId());
-        if (user.getTrigger() != Trigger.NONE) {
+        User user = null;
+        if (update.hasMessage()) {
+            user = ur.findByUserToken(update.getMessage().getChatId());
+        } else if (update.hasCallbackQuery()) {
+            user = ur.findByUserToken(update.getCallbackQuery().getMessage().getChatId());
+        }
+
+        if (user != null && user.getTrigger() != Trigger.NONE) {
             if (user.getTrigger() == Trigger.SET_GROUP_STAGE_1) {
                 groupStage1(update);
                 user.setTrigger(Trigger.SET_GROUP_STAGE_2);
@@ -37,10 +43,10 @@ public final class Trigges {
                     user.getSettings().setSelectedGroup(data.substring(6));
                     editMessageText.setText("Вы выбрали " + user.getSettings().getSelectedGroup() + " группу");
                     editMessageText.setChatId(update.getCallbackQuery().getMessage().getChatId());
-                    adminBot.updateMessage(editMessageText);
+                    pushBot.updateMessage(editMessageText);
                     user.setTrigger(Trigger.NONE);
                 } else if (data.equals("nogroup")) {
-                    AdminBot.getInstance().push(StaticMessages.createMessage("Сожалеем :(", update.getCallbackQuery().getMessage().getChatId()));
+                    PushBot.getInstance().push(StaticMessages.createMessage("Сожалеем :(", update.getCallbackQuery().getMessage().getChatId()));
                 }
             }
         }
@@ -72,6 +78,6 @@ public final class Trigges {
                 GroupMenu.getGroupListByCourse("4", chatId);
                 break;
         }
-        adminBot.updateMessage(editMessageText);
+        pushBot.updateMessage(editMessageText);
     }
 }

@@ -1,6 +1,6 @@
-package org.ssunion.cloudschedule.telegram.admin.menus;
+package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
-import org.ssunion.cloudschedule.telegram.admin.AdminBot;
+import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -24,6 +24,6 @@ public class PushTimeMenu {
         keyboardMarkup.setKeyboard(keyboardList);
         message.disableNotification();
         message.setReplyMarkup(keyboardMarkup);
-        AdminBot.getInstance().push(message);
+        PushBot.getInstance().push(message);
     }
 }

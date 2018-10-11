@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.telegram.admin.domain;
+package org.ssunion.cloudschedule.telegram.pushbot.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Settings {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String timeToSendSchedule;
     private String selectedGroup;

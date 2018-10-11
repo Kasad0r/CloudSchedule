@@ -1,8 +1,8 @@
-package org.ssunion.cloudschedule.telegram.admin.menus;
+package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
 import org.ssunion.cloudschedule.domain.Group;
 import org.ssunion.cloudschedule.repo.GroupRepo;
-import org.ssunion.cloudschedule.telegram.admin.AdminBot;
+import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class GroupMenu {
     private static GroupRepo gr;
-    private static AdminBot adminBot = AdminBot.getInstance();
+    private static PushBot pushBot = PushBot.getInstance();
 
     public static void executeStage1(long chatId) {
         SendMessage message = new SendMessage();
@@ -28,7 +28,7 @@ public class GroupMenu {
         keyboardMarkup.setKeyboard(keyboardList);
         message.disableNotification();
         message.setReplyMarkup(keyboardMarkup);
-        adminBot.push(message);
+        pushBot.push(message);
     }
 
     public static void getGroupListByCourse(String course, long chatId) {
@@ -44,6 +44,6 @@ public class GroupMenu {
         keyboard.add(Collections.singletonList(new InlineKeyboardButton().setText("Её нет в списке").setCallbackData("nogroup")));
         markup.setKeyboard(keyboard);
         sendMessage.setText("Выберите группу: ");
-        adminBot.push(sendMessage);
+        pushBot.push(sendMessage);
     }
 }

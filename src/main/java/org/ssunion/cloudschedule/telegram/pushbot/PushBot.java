@@ -1,7 +1,7 @@
-package org.ssunion.cloudschedule.telegram.admin;
+package org.ssunion.cloudschedule.telegram.pushbot;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.ssunion.cloudschedule.telegram.admin.logic.controller.MainController;
+import org.springframework.stereotype.Component;
+import org.ssunion.cloudschedule.telegram.pushbot.logic.controller.MainController;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -10,13 +10,13 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.Serializable;
 import java.util.List;
-
-public class AdminBot extends TelegramLongPollingBot {
-    private static AdminBot adminBot = new AdminBot();
-    @Value("${adminbot.username}")
-    private String username;
-    @Value("${adminbot.token}")
-    private String token;
+@Component
+public class PushBot extends TelegramLongPollingBot {
+    private static PushBot pushBot = new PushBot();
+    //@Value("${adminbot.username}")
+    private String username="kisit_administration_bot";
+    //@Value("${adminbot.token}")
+    private String token = "652862402:AAGQFVakTwmj3dtLn-dLlh9qR3xuga8a8WQ";
     private MainController mainController = MainController.getInstance();
 
     @Override
@@ -45,7 +45,7 @@ public class AdminBot extends TelegramLongPollingBot {
         }
     }
 
-    private AdminBot() {
+    private PushBot() {
 
     }
 
@@ -59,7 +59,7 @@ public class AdminBot extends TelegramLongPollingBot {
         return token;
     }
 
-    public static AdminBot getInstance() {
-        return adminBot;
+    public static PushBot getInstance() {
+        return pushBot;
     }
 }
