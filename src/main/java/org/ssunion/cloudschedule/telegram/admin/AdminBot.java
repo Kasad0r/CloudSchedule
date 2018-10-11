@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class AdminBot extends TelegramLongPollingBot {
@@ -34,6 +35,14 @@ public class AdminBot extends TelegramLongPollingBot {
 
     public void push(List<BotApiMethod<Message>> messages) {
         messages.forEach(this::push);
+    }
+
+    public void updateMessage(BotApiMethod<Serializable> update) {
+        try {
+            execute(update);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
     }
 
     private AdminBot() {
