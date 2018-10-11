@@ -1,7 +1,7 @@
 package org.ssunion.cloudschedule.telegram.admin;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.ssunion.cloudschedule.telegram.admin.controller.MainController;
+import org.ssunion.cloudschedule.telegram.admin.logic.controller.MainController;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;

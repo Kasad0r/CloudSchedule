@@ -1,10 +1,10 @@
-package org.ssunion.cloudschedule.telegram.admin.controller;
+package org.ssunion.cloudschedule.telegram.admin.logic.controller;
 
 import org.ssunion.cloudschedule.telegram.admin.domain.User;
 import org.ssunion.cloudschedule.telegram.admin.repo.UserRepo;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-public class UserController {
+public final class UserController {
     private UserRepo userRepo;
 
     public User checkUser(Update u) {

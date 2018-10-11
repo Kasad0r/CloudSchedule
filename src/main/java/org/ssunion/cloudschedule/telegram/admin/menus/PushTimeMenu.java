@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.telegram.admin.controller.menus;
+package org.ssunion.cloudschedule.telegram.admin.menus;
 
 import org.ssunion.cloudschedule.telegram.admin.AdminBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class PushTimeMenu {
-    public static void get(long chatId) {
+    public static void execute(long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Выберите время для отправки расписания: ");

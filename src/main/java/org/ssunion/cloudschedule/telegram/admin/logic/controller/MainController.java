@@ -1,12 +1,16 @@
-package org.ssunion.cloudschedule.telegram.admin.controller;
+package org.ssunion.cloudschedule.telegram.admin.logic.controller;
 
 import org.ssunion.cloudschedule.telegram.admin.AdminBot;
+import org.ssunion.cloudschedule.telegram.admin.logic.Commands;
+import org.ssunion.cloudschedule.telegram.admin.logic.Trigges;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-public class MainController {
+public final class MainController {
     private static MainController mainController = new MainController();
     private AdminBot adminBot = AdminBot.getInstance();
     private UserController uc;
+    private Commands commands= Commands.getInstance();
+    private Trigges trigges = Trigges.getInstance();
 
     private MainController() {
 
@@ -20,8 +24,9 @@ public class MainController {
         if (update.hasMessage()) {
             uc.checkUser(update);
             if (update.getMessage().hasText()) {
-                String messageText = update.getMessage().getText();
+                /*String messageText = update.getMessage().getText();*/
 
+                commands.checkCommand(update.getMessage());
             }
         } else if (update.hasCallbackQuery()) {
 
