@@ -4,11 +4,12 @@ package org.ssunion.cloudschedule.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.ssunion.cloudschedule.domain.Group;
-import org.ssunion.cloudschedule.domain.GroupWrapper;
+import org.ssunion.cloudschedule.domain.*;
 import org.ssunion.cloudschedule.repo.GroupRepo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-       /* Group group = new Group();
+        /*Group group = new Group();
         group.setGroupName("152");
         group.setLastUpdate(LocalDate.now().toString());
         Day day = new Day();
@@ -76,7 +77,7 @@ public class MainController {
         lesson10.setUpperWeek(upper);
         lesson10.setStartTime("15:41");
         day3.setDayName("Friday");
-        Day day4= new Day();
+        Day day4 = new Day();
         day4.setDayName("Wednesday");
         Lesson lesson11 = new Lesson();
         lesson11.setDownWeek(down);
@@ -112,14 +113,14 @@ public class MainController {
         lesson18.setStartTime("15:41");
         Day day5 = new Day();
         day5.setDayName("Thirthday");
-        day5.setLessons(Arrays.asList(lesson15,lesson16,lesson17,lesson18));
-        day4.setLessons(Arrays.asList(lesson11,lesson12,lesson13,lesson14));
+        day5.setLessons(Arrays.asList(lesson15, lesson16, lesson17, lesson18));
+        day4.setLessons(Arrays.asList(lesson11, lesson12, lesson13, lesson14));
         day3.setLessons(Arrays.asList(lesson7, lesson8, lesson9, lesson10));
-        group.setWeekSchedule(Arrays.asList(day, day2,day3,day4,day5));
+        group.setWeekSchedule(Arrays.asList(day, day2, day3, day4, day5));
         System.out.println(group);
         groupRepo.save(group);*/
         Iterable<Group> groups = groupRepo.findAll();
-        List<GroupWrapper>groupWrapperList = new ArrayList<>();
+        List<GroupWrapper> groupWrapperList = new ArrayList<>();
         GroupWrapper groupWrapper = new GroupWrapper();
         groupWrapper.setGroupList(groups);
         groupWrapper.setCourseName("3 course");
