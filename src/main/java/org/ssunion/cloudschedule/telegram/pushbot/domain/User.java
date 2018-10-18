@@ -1,14 +1,15 @@
 package org.ssunion.cloudschedule.telegram.pushbot.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "telegram_user")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "token")
+    private Long id;
+    @Column()
     private long userToken;
     @Column(name = "user_name")
     private String username;
@@ -19,7 +20,7 @@ public class User {
     @Column(name = "triggers")
     @Enumerated(EnumType.STRING)
     private Trigger trigger = Trigger.NONE;
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "settings_id")
     private Settings settings;
 
@@ -76,6 +77,9 @@ public class User {
     }
 
     public Settings getSettings() {
+        if (settings == null) {
+            settings = new Settings();
+        }
         return settings;
     }
 

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface GroupRepo extends JpaRepository<Group, Long> {
     List<Group> findByGroupNameStartingWith(String startWith);
+    Group findByGroupName(String groupname);
 }
