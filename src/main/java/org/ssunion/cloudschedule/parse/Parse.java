@@ -3,10 +3,10 @@ package org.ssunion.cloudschedule.parse;
 import org.apache.poi.hssf.util.CellReference;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
-import org.ssunion.cloudschedule.domain.Day;
-import org.ssunion.cloudschedule.domain.Flasher;
-import org.ssunion.cloudschedule.domain.Group;
-import org.ssunion.cloudschedule.domain.Lesson;
+import org.ssunion.cloudschedule.domain.base.Day;
+import org.ssunion.cloudschedule.domain.base.Flasher;
+import org.ssunion.cloudschedule.domain.base.Group;
+import org.ssunion.cloudschedule.domain.base.Lesson;
 
 import java.io.File;
 import java.io.IOException;

@@ -4,11 +4,12 @@ package org.ssunion.cloudschedule.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.ssunion.cloudschedule.domain.Group;
-import org.ssunion.cloudschedule.domain.GroupWrapper;
+import org.ssunion.cloudschedule.domain.base.*;
 import org.ssunion.cloudschedule.service.impl.GroupServiceImpl;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-       /* Group group = new Group();
+        Group group = new Group();
         group.setGroupName("152");
         group.setLastUpdate(LocalDate.now().toString());
         Day day = new Day();
@@ -117,7 +118,7 @@ public class MainController {
         day3.setLessons(Arrays.asList(lesson7, lesson8, lesson9, lesson10));
         group.setWeekSchedule(Arrays.asList(day, day2,day3,day4,day5));
         System.out.println(group);
-        groupRepo.save(group);*/
+        groupService.addGroup(group);
         Iterable<Group> groups = groupService.getAll();
         List<GroupWrapper>groupWrapperList = new ArrayList<>();
         GroupWrapper groupWrapper = new GroupWrapper();

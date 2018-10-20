@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.domain;
+package org.ssunion.cloudschedule.domain.base;
 
 
 import javax.persistence.*;

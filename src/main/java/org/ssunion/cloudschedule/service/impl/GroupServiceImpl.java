@@ -2,34 +2,34 @@ package org.ssunion.cloudschedule.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.ssunion.cloudschedule.domain.Group;
-import org.ssunion.cloudschedule.repo.GroupRepo;
+import org.ssunion.cloudschedule.domain.base.Group;
+import org.ssunion.cloudschedule.repo.GroupRepository;
 import org.ssunion.cloudschedule.service.GroupService;
 
 import java.util.List;
 @Service
 public class GroupServiceImpl implements GroupService {
     @Autowired
-    GroupRepo groupRepo;
+    GroupRepository groupRepository;
 
     @Override
     public void addGroup(Group group) {
-        groupRepo.saveAndFlush(group);
+        groupRepository.saveAndFlush(group);
     }
 
     @Override
     public Group getByName(String name) {
-        return groupRepo.findByGroupName(name);
+        return groupRepository.findByGroupName(name);
     }
 
     @Override
     public void editGroup(Group group) {
-        groupRepo.saveAndFlush(group);
+        groupRepository.saveAndFlush(group);
     }
 
     @Override
     public void delete(Group group) {
-        groupRepo.delete(group);
+        groupRepository.delete(group);
     }
 
     @Override
@@ -40,11 +40,11 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public List<Group> getAll() {
-        return groupRepo.findAll();
+        return groupRepository.findAll();
     }
 
     @Override
     public List<Group> getByCource(String course) {
-        return groupRepo.findByGroupNameStartingWith(course);
+        return groupRepository.findByGroupNameStartingWith(course);
     }
 }

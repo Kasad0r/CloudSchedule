@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.telegram.pushbot.domain;
+package org.ssunion.cloudschedule.domain.telegram.pushbot;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -7,8 +7,8 @@ import java.io.Serializable;
 @Table(name = "telegram_user")
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     @Column()
     private long userToken;
     @Column(name = "user_name")

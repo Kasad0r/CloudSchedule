@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.telegram.pushbot.domain;
+package org.ssunion.cloudschedule.domain.telegram.pushbot;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

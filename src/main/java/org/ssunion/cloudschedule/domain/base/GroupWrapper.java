@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.domain;
+package org.ssunion.cloudschedule.domain.base;
 
 public class GroupWrapper {
     private  String courseName;

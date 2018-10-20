@@ -1,6 +1,6 @@
 package org.ssunion.cloudschedule.service;
 
-import org.ssunion.cloudschedule.domain.Group;
+import org.ssunion.cloudschedule.domain.base.Group;
 
 import java.util.List;
 
@@ -16,5 +16,6 @@ public interface GroupService {
     void delete(long id);
 
     List<Group> getAll();
+
     List<Group> getByCource(String course);
 }
