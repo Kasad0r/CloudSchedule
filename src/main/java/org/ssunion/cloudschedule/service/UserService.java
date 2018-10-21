@@ -17,4 +17,6 @@ public interface UserService {
     boolean checkUser(Long userToken);
 
     User getUserByToken(Long userToken);
+
+    List<User> getUserBySelectedGroup(String group);
 }

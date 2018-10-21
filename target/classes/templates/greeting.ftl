@@ -31,6 +31,7 @@
         .dropdown-item.active {
             background-color: forestgreen;
         }
+
         #status_label {
             position: absolute;
             top: 768px;
@@ -85,7 +86,8 @@
                 <blockquote class="blockquote text-center">
                     <p class="mb-0">
                     <h2>Онлайн рассписание колледжа КИСИТ КНЕУ.</h2></p>
-                    <footer class="blockquote-footer">Говорят что рассписание у нас рандомится. <cite title="Source Title">Иногда мы сами в это верим...</cite>
+                    <footer class="blockquote-footer">Говорят что рассписание у нас рандомится. <cite
+                            title="Source Title">Иногда мы сами в это верим...</cite>
                     </footer>
                     <canvas id="drawing_canvas" class="mb-5"></canvas>
                     <div id="status_label">loading...</div>
@@ -162,7 +164,7 @@
             viewCenterY = viewHeight * 0.5,
             drawingCanvas = document.getElementById("drawing_canvas"),
             ctx,
-            timeStep = (1/60),
+            timeStep = (1 / 60),
             time = 0;
 
     var ppm = 24, // pixels per meter
@@ -189,7 +191,7 @@
 
     var statusLabel = document.getElementById('status_label');
 
-    window.onload = function() {
+    window.onload = function () {
         initDrawingCanvas();
         initPhysics();
 
@@ -219,8 +221,8 @@
         if (world.hitTest(mouseBody.position, [wheel.body])[0]) {
 
             mouseConstraint = new p2.RevoluteConstraint(mouseBody, wheel.body, {
-                worldPivot:mouseBody.position,
-                collideConnected:false
+                worldPivot: mouseBody.position,
+                collideConnected: false
             });
 
             world.addConstraint(mouseConstraint);
@@ -239,7 +241,7 @@
             mouseConstraint = null;
 
             if (wheelSpinning === false && wheelStopped === true) {
-                if ( Math.abs(wheel.body.angularVelocity) > 7.5) {
+                if (Math.abs(wheel.body.angularVelocity) > 7.5) {
                     wheelSpinning = true;
                     wheelStopped = false;
                     console.log('good spin');
@@ -258,7 +260,7 @@
                 x = (e.clientX - rect.left) / ppm,
                 y = physicsHeight - (e.clientY - rect.top) / ppm;
 
-        return {x:x, y:y};
+        return {x: x, y: y};
     }
 
     function initPhysics() {
@@ -269,8 +271,8 @@
         arrowMaterial = new p2.Material();
         pinMaterial = new p2.Material();
         contactMaterial = new p2.ContactMaterial(arrowMaterial, pinMaterial, {
-            friction:0.0,
-            restitution:0.1
+            friction: 0.0,
+            restitution: 0.1
         });
         world.addContactMaterial(contactMaterial);
 
@@ -301,7 +303,7 @@
     }
 
     function update() {
-        particles.forEach(function(p) {
+        particles.forEach(function (p) {
             p.update();
             if (p.complete) {
                 particles.splice(particles.indexOf(p), 1);
@@ -341,7 +343,7 @@
         wheel.draw();
         arrow.draw();
 
-        particles.forEach(function(p) {
+        particles.forEach(function (p) {
             p.draw();
         });
     }
@@ -375,14 +377,15 @@
         this.createBody();
         this.createPins();
     }
+
     Wheel.prototype = {
-        createBody:function() {
-            this.body = new p2.Body({mass:1, position:[this.x, this.y]});
+        createBody: function () {
+            this.body = new p2.Body({mass: 1, position: [this.x, this.y]});
             this.body.angularDamping = 0.0;
             this.body.addShape(new p2.Circle(this.radius));
             this.body.shapes[0].sensor = true; //TODO use collision bits instead
 
-            var axis = new p2.Body({position:[this.x, this.y]});
+            var axis = new p2.Body({position: [this.x, this.y]});
             var constraint = new p2.LockConstraint(this.body, axis);
             constraint.collideConnected = false;
 
@@ -390,7 +393,7 @@
             world.addBody(axis);
             world.addConstraint(constraint);
         },
-        createPins:function() {
+        createPins: function () {
             var l = this.segments,
                     pin = new p2.Circle(this.pinRadius);
 
@@ -404,13 +407,13 @@
                 this.pPinPositions[i] = [x * ppm, -y * ppm];
             }
         },
-        gotLucky:function() {
+        gotLucky: function () {
             var currentRotation = wheel.body.angle % TWO_PI,
                     currentSegment = Math.floor(currentRotation / this.deltaPI);
 
             return (currentSegment % 2 === 0);
         },
-        draw:function() {
+        draw: function () {
             // TODO this should be cached in a canvas, and drawn as an image
             // also, more doodads
             ctx.save();
@@ -435,7 +438,7 @@
 
             ctx.fillStyle = '#E8F5E9';
 
-            this.pPinPositions.forEach(function(p) {
+            this.pPinPositions.forEach(function (p) {
                 ctx.beginPath();
                 ctx.arc(p[0], p[1], this.pPinRadius, 0, TWO_PI);
                 ctx.fill();
@@ -460,26 +463,27 @@
 
         this.createBody();
     }
+
     Arrow.prototype = {
-        createBody:function() {
-            this.body = new p2.Body({mass:1, position:[this.x, this.y]});
+        createBody: function () {
+            this.body = new p2.Body({mass: 1, position: [this.x, this.y]});
             this.body.addShape(this.createArrowShape());
 
-            var axis = new p2.Body({position:[this.x, this.y]});
+            var axis = new p2.Body({position: [this.x, this.y]});
             var constraint = new p2.RevoluteConstraint(this.body, axis, {
-                worldPivot:[this.x, this.y]
+                worldPivot: [this.x, this.y]
             });
             constraint.collideConnected = false;
 
-            var left = new p2.Body({position:[this.x - 2, this.y]});
-            var right = new p2.Body({position:[this.x + 2, this.y]});
+            var left = new p2.Body({position: [this.x - 2, this.y]});
+            var right = new p2.Body({position: [this.x + 2, this.y]});
             var leftConstraint = new p2.DistanceConstraint(this.body, left, {
-                localAnchorA:[-this.w * 2, this.h * 0.25],
-                collideConnected:false
+                localAnchorA: [-this.w * 2, this.h * 0.25],
+                collideConnected: false
             });
             var rightConstraint = new p2.DistanceConstraint(this.body, right, {
-                localAnchorA:[this.w * 2, this.h * 0.25],
-                collideConnected:false
+                localAnchorA: [this.w * 2, this.h * 0.25],
+                collideConnected: false
             });
             var s = 32,
                     r = 4;
@@ -496,7 +500,7 @@
             world.addConstraint(rightConstraint);
         },
 
-        createArrowShape:function() {
+        createArrowShape: function () {
             this.verts[0] = [0, this.h * 0.25];
             this.verts[1] = [-this.w * 0.5, 0];
             this.verts[2] = [0, -this.h * 0.75];
@@ -512,15 +516,15 @@
 
             return shape;
         },
-        hasStopped:function() {
+        hasStopped: function () {
             var angle = Math.abs(this.body.angle % TWO_PI);
 
             return (angle < 1e-3 || (TWO_PI - angle) < 1e-3);
         },
-        update:function() {
+        update: function () {
 
         },
-        draw:function() {
+        draw: function () {
             ctx.save();
             ctx.translate(this.pX, this.pY);
             ctx.rotate(-this.body.angle);
@@ -541,7 +545,7 @@
     /////////////////////////////
     // your reward
     /////////////////////////////
-    Particle = function(p0, p1, p2, p3) {
+    Particle = function (p0, p1, p2, p3) {
         this.p0 = p0;
         this.p1 = p1;
         this.p2 = p2;
@@ -549,7 +553,7 @@
 
         this.time = 0;
         this.duration = 3 + Math.random() * 2;
-        this.color =  'hsl(' + Math.floor(Math.random() * 360) + ',100%,50%)';
+        this.color = 'hsl(' + Math.floor(Math.random() * 360) + ',100%,50%)';
 
         this.w = 10;
         this.h = 7;
@@ -557,7 +561,7 @@
         this.complete = false;
     };
     Particle.prototype = {
-        update:function() {
+        update: function () {
             this.time = Math.min(this.duration, this.time + timeStep);
 
             var f = Ease.outCubic(this.time, 0, 1, this.duration);
@@ -566,14 +570,14 @@
             var dx = p.x - this.x;
             var dy = p.y - this.y;
 
-            this.r =  Math.atan2(dy, dx) + HALF_PI;
+            this.r = Math.atan2(dy, dx) + HALF_PI;
             this.sy = Math.sin(Math.PI * f * 10);
             this.x = p.x;
             this.y = p.y;
 
             this.complete = this.time === this.duration;
         },
-        draw:function() {
+        draw: function () {
             ctx.save();
             ctx.translate(this.x, this.y);
             ctx.rotate(this.r);
@@ -585,7 +589,7 @@
             ctx.restore();
         }
     };
-    Point = function(x, y) {
+    Point = function (x, y) {
         this.x = x || 0;
         this.y = y || 0;
     };
@@ -600,24 +604,24 @@
      * d = duration
      */
     var Ease = {
-        inCubic:function (t, b, c, d) {
+        inCubic: function (t, b, c, d) {
             t /= d;
-            return c*t*t*t + b;
+            return c * t * t * t + b;
         },
-        outCubic:function(t, b, c, d) {
+        outCubic: function (t, b, c, d) {
             t /= d;
             t--;
-            return c*(t*t*t + 1) + b;
+            return c * (t * t * t + 1) + b;
         },
-        inOutCubic:function(t, b, c, d) {
-            t /= d/2;
-            if (t < 1) return c/2*t*t*t + b;
+        inOutCubic: function (t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t * t + b;
             t -= 2;
-            return c/2*(t*t*t + 2) + b;
+            return c / 2 * (t * t * t + 2) + b;
         },
         inBack: function (t, b, c, d, s) {
             s = s || 1.70158;
-            return c*(t/=d)*t*((s+1)*t - s) + b;
+            return c * (t /= d) * t * ((s + 1) * t - s) + b;
         }
     };
 

@@ -31,6 +31,7 @@ public class UserServiceImpl implements UserService {
         userRepository.delete(user);
     }
 
+    @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
@@ -43,5 +44,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByToken(Long userToken) {
         return userRepository.findFirstByUserToken(userToken);
+    }
+
+    @Override
+    public List<User> getUserBySelectedGroup(String group) {
+        return userRepository.findUsersBySettings_SelectedGroupAndSettings_AdminNoticeFalse(group);
     }
 }

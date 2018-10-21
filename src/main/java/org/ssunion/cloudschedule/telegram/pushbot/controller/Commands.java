@@ -32,6 +32,9 @@ public final class Commands {
         commandsList.add("/timetopush");
         commandsList.add("/adminnotice");
         commandsList.add("/status");
+        commandsList.add("/week");
+        commandsList.add("/help");
+        commandsList.add("now");
     }
 
     @Autowired
@@ -73,6 +76,14 @@ public final class Commands {
                 case "/status":
                     userStatusMenu.execute(user);
                     break;
+                case "/help":
+                    pushBot.executeMessage(MessageFactory.create(message.getChatId(),
+                            "/setgroup - выбор группы\n" +
+                                    "/timetopush - время отправки рассписания\n" +
+                                    "/adminnotice - вкл сообщения от администрации\n" +
+                                    "/status - инфо об аккаунте\n" +
+                                    "/week - рассписание на неделю \n" +
+                                    "/now - рассписание на сегодня"));
                 default:
                     break;
             }
