@@ -8,6 +8,9 @@ import org.ssunion.cloudschedule.service.UserService;
 
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 @Service
 /*@Transactional(propagation= Propagation.REQUIRED, readOnly=true, noRollbackFor=Exception.class)*/
 public class UserServiceImpl implements UserService {

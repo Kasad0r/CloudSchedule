@@ -13,6 +13,11 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.util.List;
+
+/**
+ * @author kasad0r
+ */
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class PushBot extends TelegramLongPollingBot {
@@ -22,6 +27,7 @@ public class PushBot extends TelegramLongPollingBot {
     @Value("${adminbot.token}")
     private String token;
     private PushBotController pushBotController;
+
     @Autowired
     public void setPushBotController(PushBotController pushBotController) {
         this.pushBotController = pushBotController;
@@ -56,5 +62,9 @@ public class PushBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+    }
+
+    public void executeMessage(List<BotApiMethod<Message>> sendMessages) {
+        sendMessages.forEach(this::executeMessage);
     }
 }

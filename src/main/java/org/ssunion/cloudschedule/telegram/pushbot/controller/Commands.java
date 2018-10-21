@@ -7,6 +7,7 @@ import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
 import org.ssunion.cloudschedule.service.impl.UserServiceImpl;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.ssunion.cloudschedule.telegram.pushbot.menus.GroupMenu;
+import org.ssunion.cloudschedule.telegram.pushbot.menus.PushTimeMenu;
 import org.ssunion.cloudschedule.telegram.pushbot.menus.UserStatusMenu;
 import org.ssunion.cloudschedule.telegram.pushbot.messages.MessageFactory;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -14,6 +15,9 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 @Component
 public final class Commands {
     private final UserServiceImpl userService;
@@ -21,6 +25,7 @@ public final class Commands {
     private static List<String> commandsList = new ArrayList<>();
     private final UserStatusMenu userStatusMenu;
     private final PushBot pushBot;
+    private final PushTimeMenu pushTimeMenu;
 
     static {
         commandsList.add("/setgroup");
@@ -30,11 +35,12 @@ public final class Commands {
     }
 
     @Autowired
-    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot) {
+    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot, PushTimeMenu pushTimeMenu) {
         this.userService = userService;
         this.groupMenu = groupMenu;
         this.userStatusMenu = userStatusMenu;
         this.pushBot = pushBot;
+        this.pushTimeMenu = pushTimeMenu;
     }
 
 
@@ -50,6 +56,8 @@ public final class Commands {
                     break;
                 case "/timetopush":
                     user.setTrigger(Trigger.SET_TIME_TO_PUSH);
+                    pushTimeMenu.execute(message.getChatId());
+                    userService.addUser(user);
                     break;
                 case "/adminnotice":
                     if (user.getSettings().isAdminNotice()) {
@@ -64,6 +72,8 @@ public final class Commands {
                     break;
                 case "/status":
                     userStatusMenu.execute(user);
+                    break;
+                default:
                     break;
             }
         }

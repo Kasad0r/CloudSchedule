@@ -11,6 +11,9 @@ import org.ssunion.cloudschedule.telegram.pushbot.messages.MessageFactory;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+/**
+ * @author kasad0r
+ */
 @Component
 public final class Trigges {
     private final UserServiceImpl userService;
@@ -46,19 +49,34 @@ public final class Trigges {
                     user.getSettings().setSelectedGroup(data.substring(6));
                     editMessageText.setText("Вы выбрали " + user.getSettings().getSelectedGroup() + " группу");
                     editMessageText.setChatId(chatId);
+                    editMessageText.setMessageId(update.getCallbackQuery().getMessage().getMessageId());
                     pushBot.updateMessage(editMessageText);
                     user.setTrigger(Trigger.NONE);
+                    userService.addUser(user);
                 } else if (data.equals("nogroup")) {
                     pushBot.executeMessage(MessageFactory.create(chatId, "Сожалеем :("));
+                    pushBot.updateMessage(
+                            new EditMessageText()
+                                    .setMessageId(update.getCallbackQuery().getMessage().getMessageId())
+                                    .setText("Ожидайте обновления рассписания.")
+                                    .setChatId(chatId));
+                    user.setTrigger(Trigger.NONE);
+                    userService.addUser(user);
                 }
+            } else if (user.getTrigger() == Trigger.SET_TIME_TO_PUSH) {
+                user.getSettings().setTimeToSendSchedule(update.getCallbackQuery().getData().substring(5) + ":00");
+                pushBot.updateMessage(
+                        new EditMessageText()
+                                .setChatId(update.getCallbackQuery().getMessage().getChatId())
+                                .setMessageId(update.getCallbackQuery().getMessage().getMessageId())
+                                .setText("Вы выбрали:" + user.getSettings().getTimeToSendSchedule()));
+                user.setTrigger(Trigger.NONE);
+                userService.addUser(user);
             }
-
         }
     }
 
     private void groupStage1(Update update) {
-        System.err.println(update);
-        System.err.println(update.getCallbackQuery().getData());
         String callbackData = update.getCallbackQuery().getData();
         long chatId = update.getCallbackQuery().getMessage().getChatId();
         EditMessageText editMessageText = new EditMessageText();
@@ -87,11 +105,12 @@ public final class Trigges {
                 editMessageText.setMessageId(update.getCallbackQuery().getMessage().getMessageId());
                 groupMenu.getGroupListByCourse("4", chatId);
                 break;
+            //TODO Если нужно, сейчас ничего придумать не могу
+            default:
+                break;
         }
         editMessageText.setText("<b>" + editMessageText.getText() + "</b>");
         editMessageText.setParseMode("html");
-        System.out.println(editMessageText);
-        pushBot.executeMessage(MessageFactory.create(chatId, "HELLO"));
         pushBot.updateMessage(editMessageText);
     }
 }

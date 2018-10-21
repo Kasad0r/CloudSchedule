@@ -3,15 +3,20 @@ package org.ssunion.cloudschedule.domain.base;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
-@Entity@Table(name = "groups")
+/**
+ * @author kasad0r
+ */
+@Entity
+@Table(name = "groups")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String groupName;
     @ElementCollection(targetClass = Day.class, fetch = FetchType.EAGER)
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Day> weekSchedule;
     private String lastUpdate;
 
@@ -51,5 +56,18 @@ public class Group {
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Group group = (Group) o;
+        return Objects.equals(groupName, group.groupName) &&
+                Objects.equals(weekSchedule, group.weekSchedule) &&
+                Objects.equals(lastUpdate, group.lastUpdate);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(groupName, weekSchedule, lastUpdate);
+    }
 }

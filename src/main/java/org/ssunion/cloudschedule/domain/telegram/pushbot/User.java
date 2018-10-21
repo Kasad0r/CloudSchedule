@@ -2,7 +2,11 @@ package org.ssunion.cloudschedule.domain.telegram.pushbot;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
+/**
+ * @author kasad0r
+ */
 @Entity
 @Table(name = "telegram_user")
 public class User implements Serializable {
@@ -106,5 +110,23 @@ public class User implements Serializable {
                 ", trigger=" + trigger +
                 ", settings=" + settings +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return userToken == user.userToken &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(firstname, user.firstname) &&
+                Objects.equals(lastname, user.lastname) &&
+                trigger == user.trigger &&
+                Objects.equals(settings, user.settings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userToken, username, firstname, lastname, trigger, settings);
     }
 }

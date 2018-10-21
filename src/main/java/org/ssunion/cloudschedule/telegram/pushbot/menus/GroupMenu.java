@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 @Component
 public class GroupMenu {
     private static GroupServiceImpl groupService;

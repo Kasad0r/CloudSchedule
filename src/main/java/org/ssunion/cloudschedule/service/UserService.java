@@ -4,6 +4,9 @@ import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
 
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 public interface UserService {
     User addUser(User user);
 

@@ -5,7 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Objects;
 
+/**
+ * @author kasad0r
+ */
 @Entity
 public class Settings implements Serializable {
     @Id
@@ -59,5 +63,20 @@ public class Settings implements Serializable {
                 ", selectedGroup='" + selectedGroup + '\'' +
                 ", adminNotice='" + adminNotice + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Settings settings = (Settings) o;
+        return adminNotice == settings.adminNotice &&
+                Objects.equals(timeToSendSchedule, settings.timeToSendSchedule) &&
+                Objects.equals(selectedGroup, settings.selectedGroup);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(timeToSendSchedule, selectedGroup, adminNotice);
     }
 }

@@ -6,6 +6,9 @@ import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
+/**
+ * @author kasad0r
+ */
 @Component
 public class UserStatusMenu {
 
@@ -22,10 +25,10 @@ public class UserStatusMenu {
         sendMessage.setText("<b>Статус:</b>\n" +
                 "<i>ID: </i>" + user.getUserToken() +
                 "\n<i>UserName: </i>" + user.getUsername() +
-                "\n<i>FullName: </i>" + user.getFirstname() + " " + user.getLastname() +
-                "\n<i>Admin Notice: </i>" + (user.getSettings().isAdminNotice() ? "ON" : "OFF") +
-                "\n<i>Selected group: </i>" + (user.getSettings().getSelectedGroup() == null ? "Не выбран" : user.getSettings().getSelectedGroup()) +
-                "\n<i>Time To Send: </i>" + (user.getSettings().getTimeToSendSchedule() == null ? "Не выбран" : user.getSettings().getTimeToSendSchedule()));
+                "\n<i>Имя пользователя: </i>" + (user.getFirstname() == null ? "" : user.getFirstname()) + " " + (user.getLastname() == null ? "" : user.getLastname()) +
+                "\n<i>Сообщение от администрации: </i>" + (user.getSettings().isAdminNotice() ? "ВКЛ" : "ВЫКЛ") +
+                "\n<i>Выбранная группа: </i>" + (user.getSettings().getSelectedGroup() == null ? "Не выбран" : user.getSettings().getSelectedGroup()) +
+                "\n<i>Время для отправки: </i>" + (user.getSettings().getTimeToSendSchedule() == null ? "Не выбран" : user.getSettings().getTimeToSendSchedule()));
         pushBot.executeMessage(sendMessage);
     }
 }

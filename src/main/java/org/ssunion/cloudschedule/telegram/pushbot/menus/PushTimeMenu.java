@@ -11,17 +11,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 @Component
 public class PushTimeMenu {
 
-    private static PushBot pushBot;
+    private final PushBot pushBot;
 
     @Autowired
     public PushTimeMenu(PushBot pushBot) {
-        PushTimeMenu.pushBot = pushBot;
+        this.pushBot = pushBot;
     }
 
-    public static void execute(long chatId) {
+    public void execute(long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Выберите время для отправки расписания: ");

@@ -3,7 +3,11 @@ package org.ssunion.cloudschedule.domain.base;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
+/**
+ * @author kasad0r
+ */
 @Entity
 @Table(name = "day_in_week")
 
@@ -14,12 +18,13 @@ public class Day {
 
     private String dayName;
     @ElementCollection(targetClass = Lesson.class, fetch = FetchType.EAGER)
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Lesson> lessons;
 
-    public Day(){
+    public Day() {
 
     }
+
     public String getDayName() {
         return dayName;
     }
@@ -42,6 +47,20 @@ public class Day {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Day day = (Day) o;
+        return Objects.equals(dayName, day.dayName) &&
+                Objects.equals(lessons, day.lessons);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dayName, lessons);
     }
 
     @Override

@@ -4,6 +4,9 @@ import org.ssunion.cloudschedule.domain.base.Group;
 
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
 public interface GroupService {
     void addGroup(Group group);
 
