@@ -18,5 +18,14 @@ public interface UserService {
 
     User getUserByToken(Long userToken);
 
-    List<User> getUserBySelectedGroup(String group);
+    List<User> getUsersBySelectedGroupAndNotice(String group, boolean notice);
+
+    List<User> getUsersBySelectedGroup(String group);
+
+    List<User> getUsersByCourse(String course);
+
+    List<User> getUsersByCourseAndNotice(String course, boolean notice);
+
+    List<User> getUsersByAdminNotice(boolean notice);
+
 }

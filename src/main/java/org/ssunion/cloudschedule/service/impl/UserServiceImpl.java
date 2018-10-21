@@ -47,7 +47,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUserBySelectedGroup(String group) {
-        return userRepository.findUsersBySettings_SelectedGroupAndSettings_AdminNoticeFalse(group);
+    public List<User> getUsersBySelectedGroupAndNotice(String group, boolean notice) {
+        return userRepository.findUsersBySettings_SelectedGroupAndSettings_AdminNotice(group, notice);
     }
+
+    @Override
+    public List<User> getUsersBySelectedGroup(String group) {
+        return userRepository.findUsersBySettings_SelectedGroup(group);
+    }
+
+    @Override
+    public List<User> getUsersByCourse(String course) {
+        return userRepository.findUsersBySettings_SelectedGroupStartingWith(course);
+    }
+
+    @Override
+    public List<User> getUsersByCourseAndNotice(String course, boolean notice) {
+        return userRepository.findUsersBySettings_SelectedGroupStartingWithAndSettings_AdminNotice(course, notice);
+    }
+
+    @Override
+    public List<User> getUsersByAdminNotice(boolean notice) {
+        return userRepository.findUsersBySettings_AdminNotice(notice);
+    }
+
 }

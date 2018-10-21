@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.ssunion.cloudschedule.telegram.pushbot.controller.PushBotController;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -64,7 +65,7 @@ public class PushBot extends TelegramLongPollingBot {
         }
     }
 
-    public void executeMessage(List<BotApiMethod<Message>> sendMessages) {
+    public void executeMessage(List<SendMessage> sendMessages) {
         sendMessages.forEach(this::executeMessage);
     }
 }
