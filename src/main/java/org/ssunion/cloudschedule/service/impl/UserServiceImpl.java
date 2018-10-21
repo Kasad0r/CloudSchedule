@@ -9,9 +9,14 @@ import org.ssunion.cloudschedule.service.UserService;
 import java.util.List;
 
 @Service
+/*@Transactional(propagation= Propagation.REQUIRED, readOnly=true, noRollbackFor=Exception.class)*/
 public class UserServiceImpl implements UserService {
+    private final UserRepository userRepository;
+
     @Autowired
-     UserRepository userRepository;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public User addUser(User user) {
@@ -30,5 +35,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean checkUser(Long userToken) {
         return userRepository.findFirstByUserToken(userToken) != null;
+    }
+
+    @Override
+    public User getUserByToken(Long userToken) {
+        return userRepository.findFirstByUserToken(userToken);
     }
 }

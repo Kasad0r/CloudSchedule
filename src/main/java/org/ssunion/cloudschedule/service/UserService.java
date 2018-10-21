@@ -12,4 +12,6 @@ public interface UserService {
     List<User> findAll();
 
     boolean checkUser(Long userToken);
+
+    User getUserByToken(Long userToken);
 }

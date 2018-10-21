@@ -15,11 +15,16 @@ public class PushBotController {
 
     private final PushBot pushBot;
 
-    @Autowired
+    private final Commands commands;
 
-    public PushBotController(UserServiceImpl userService, PushBot pushBot) {
+    private final Trigges trigges;
+
+    @Autowired
+    public PushBotController(UserServiceImpl userService, PushBot pushBot, Commands commands, Trigges trigges) {
         this.userService = userService;
         this.pushBot = pushBot;
+        this.commands = commands;
+        this.trigges = trigges;
     }
 
 
@@ -34,14 +39,14 @@ public class PushBotController {
                         pushBot.executeMessage(MessageFactory.create(chatId, "Добро пожаловать, вы были зарегистрированы"));
                     }
                     if (userService.checkUser(chatId)) {
-
+                        commands.checkCommand(update.getMessage());
                     }
                 }
             } else {
 
             }
         } else if (update.hasCallbackQuery()) {
-
+            trigges.check(update);
         }
     }
 

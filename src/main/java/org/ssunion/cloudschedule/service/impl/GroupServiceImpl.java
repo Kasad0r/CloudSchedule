@@ -8,6 +8,7 @@ import org.ssunion.cloudschedule.service.GroupService;
 
 import java.util.List;
 @Service
+//@Transactional(propagation= Propagation.REQUIRED, readOnly=true, noRollbackFor=Exception.class)
 public class GroupServiceImpl implements GroupService {
     @Autowired
     GroupRepository groupRepository;

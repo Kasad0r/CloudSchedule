@@ -15,6 +15,10 @@ public class Settings implements Serializable {
     private String selectedGroup;
     private boolean adminNotice;
 
+    public Settings() {
+
+    }
+
     public long getId() {
         return id;
     }

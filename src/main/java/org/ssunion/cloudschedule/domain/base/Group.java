@@ -51,13 +51,5 @@ public class Group {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", groupName='" + groupName + '\'' +
-                ", weekSchedule=" + weekSchedule +
-                ", lastUpdate='" + lastUpdate + '\'' +
-                '}';
-    }
+
 }
