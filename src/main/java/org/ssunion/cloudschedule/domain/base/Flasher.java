@@ -60,8 +60,12 @@ public class Flasher {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Flasher flasher = (Flasher) o;
         return Objects.equals(name, flasher.name) &&
                 Objects.equals(teacher, flasher.teacher);

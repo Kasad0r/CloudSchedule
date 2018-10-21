@@ -51,8 +51,12 @@ public class Day {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Day day = (Day) o;
         return Objects.equals(dayName, day.dayName) &&
                 Objects.equals(lessons, day.lessons);
