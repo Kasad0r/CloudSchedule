@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="34fa52ca-3541-4ad2-8ed5-a78761dd8049" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushBotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/ScheduleMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/ScheduleMessages.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,12 +104,12 @@
           <entry key="groups" value="1" />
           <entry key="groups_week_schedule" value="4" />
           <entry key="hibernate_sequence" value="3" />
-          <entry key="java" value="345" />
+          <entry key="java" value="360" />
           <entry key="lessons" value="3" />
           <entry key="properties" value="11" />
           <entry key="settings" value="4" />
           <entry key="telegram_user" value="10" />
-          <entry key="xml" value="3" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -123,9 +118,9 @@
           <entry key="Database Element" value="35" />
           <entry key="FTL" value="6" />
           <entry key="Git file" value="2" />
-          <entry key="JAVA" value="345" />
+          <entry key="JAVA" value="360" />
           <entry key="Properties" value="11" />
-          <entry key="XML" value="3" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -169,7 +164,9 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.create.new" value="1" />
+          <entry key="git.branch.create.new" value="2" />
+          <entry key="git.branch.delete.remote" value="1" />
+          <entry key="git.branch.merge" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -177,72 +174,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/ScheduleMessages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2228">
-              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Flasher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/UserStatusMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/GroupMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-388">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Trigges.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1364">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushMessages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1170">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushBotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-658">
-              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+            <state relative-caret-position="864">
+              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -251,10 +186,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Commands.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+            <state relative-caret-position="315">
+              <caret line="144" column="48" lean-forward="true" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -263,10 +198,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/MessageFactory.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="360">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/UserStatusMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -277,8 +221,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/PushTimeMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="198">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/PushBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,7 +269,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="rework-telegrambot-admin" />
       </map>
     </option>
   </component>
@@ -508,8 +464,7 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="ssunion" type="462c0819:PsiDirectoryNode" />
               <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="parse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
@@ -520,7 +475,17 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="ssunion" type="462c0819:PsiDirectoryNode" />
               <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="repo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
+              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
               <item name="telegram" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -532,7 +497,6 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="ssunion" type="462c0819:PsiDirectoryNode" />
               <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="telegram" type="462c0819:PsiDirectoryNode" />
               <item name="pushbot" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -545,52 +509,9 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="ssunion" type="462c0819:PsiDirectoryNode" />
               <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="parse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="scheduler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
               <item name="telegram" type="462c0819:PsiDirectoryNode" />
+              <item name="pushbot" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
@@ -607,68 +528,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="date" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cloudschedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="ssunion" type="462c0819:PsiDirectoryNode" />
-              <item name="cloudschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="telegram" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -684,7 +543,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/resources/application.properties&#10;/home/kasad0r/Documents/cloudschedule/src/main/java/org/ssunion/cloudschedule/scheduler/ScheduleController.java" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540236151250" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540236650583" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ssunioncloudschedule" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -713,26 +572,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Application.Parse">
     <configuration name="Parse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.parse.Parse" />
       <module name="cloudschedule" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.ssunion.cloudschedule.parse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PushMessages" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.telegram.pushbot.controller.PushMessages" />
-      <module name="cloudschedule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ssunion.cloudschedule.telegram.pushbot.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -751,6 +597,22 @@
       <option name="PACKAGE_NAME" value="org.ssunion.cloudschedule.date" />
       <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.date.DateTest" />
       <option name="METHOD_NAME" value="dayOfWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Parse.s" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudschedule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ssunion.cloudschedule.parse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ssunion.cloudschedule.parse" />
+      <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.parse.Parse" />
+      <option name="METHOD_NAME" value="s" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -799,18 +661,18 @@
     <list>
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Application.Parse" />
-      <item itemvalue="Application.PushMessages" />
       <item itemvalue="JUnit.ScheduleMessages.test" />
       <item itemvalue="JUnit.Parse.test" />
       <item itemvalue="JUnit.DateTest.dayOfWeek" />
+      <item itemvalue="JUnit.Parse.s" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Parse.s" />
+        <item itemvalue="Application.Parse" />
         <item itemvalue="JUnit.DateTest.dayOfWeek" />
         <item itemvalue="JUnit.Parse.test" />
         <item itemvalue="JUnit.ScheduleMessages.test" />
-        <item itemvalue="Application.PushMessages" />
-        <item itemvalue="Application.Parse" />
       </list>
     </recent_temporary>
   </component>
@@ -920,7 +782,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77964000" />
+    <option name="totallyTimeSpent" value="78076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -933,8 +795,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1001" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4982699" visible="true" weight="0.22838847" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982699" visible="true" weight="0.22838847" />
       <window_info id="Structure" order="1" sideWeight="0.5017301" side_tool="true" weight="0.22838847" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -948,7 +811,7 @@
       <window_info id="Job Explorer" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.33486766" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.33486766" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1039,183 +902,8 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/service/impl/UserServiceImpl.java</url>
-          <line>54</line>
-          <properties class="org.ssunion.cloudschedule.service.impl.UserServiceImpl">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week_lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/flashers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/flashers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/groups_week_schedule">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/groups_week_schedule">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/groups_week_schedule">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/hibernate_sequence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/hibernate_sequence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/groups_week_schedule">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/hibernate_sequence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/hibernate_sequence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week_lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week_lessons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/day_in_week">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/flashers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/flashers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9d4f0750-02a5-4c80-8b65-98114a62e670/schema/cloudschedule/table/flashers">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1315,19 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/PushBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-            <element signature="e#2212#2213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1362,77 +1037,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Flasher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/ScheduleMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2228">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="234">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/MessageFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/domain/base/Flasher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="180">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/PushTimeMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/UserStatusMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/GroupMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Trigges.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1364">
+        <state relative-caret-position="144">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1170">
+        <state relative-caret-position="144">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/PushBotController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-658">
+        <state relative-caret-position="540">
           <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/messages/MessageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1441,8 +1090,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/controller/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="112" column="49" lean-forward="true" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+        <state relative-caret-position="425">
+          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/GroupMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/UserStatusMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/menus/PushTimeMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/telegram/pushbot/PushBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="144" column="48" lean-forward="true" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
