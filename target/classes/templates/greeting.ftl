@@ -316,6 +316,19 @@
         world.step(timeStep * 0.5);
         world.step(timeStep * 0.5);
 
+        world.step(timeStep * 0.5);
+        world.step(timeStep * 0.5);
+
+        var phrases = ['jopa',
+            'pizdec',
+            'tlen',
+            'uninie',
+            'nahui ti suda postupil, uebok a?',
+            'segodnya na fizru na 10 chasov, potom matan na 9 vechera, udachi brat',
+            'opyat` paru probuhaesh, daun blya'
+        ];
+        randomBlya = Math.floor(Math.random() * 7);
+
         if (wheelSpinning === true && wheelStopped === false &&
                 wheel.body.angularVelocity < 1 && arrow.hasStopped()) {
 
@@ -331,7 +344,7 @@
                 statusLabel.innerHTML = 'Пар нет братан, отдыхай!'
             }
             else {
-                statusLabel.innerHTML = 'Всё не очень весело.';
+                statusLabel.innerHTML = phrases[ Math.floor(Math.random() * phrases.length)];
             }
         }
     }

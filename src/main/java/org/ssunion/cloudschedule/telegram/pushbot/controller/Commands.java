@@ -11,6 +11,7 @@ import org.ssunion.cloudschedule.telegram.pushbot.menus.GroupMenu;
 import org.ssunion.cloudschedule.telegram.pushbot.menus.PushTimeMenu;
 import org.ssunion.cloudschedule.telegram.pushbot.menus.UserStatusMenu;
 import org.ssunion.cloudschedule.telegram.pushbot.messages.MessageFactory;
+import org.ssunion.cloudschedule.telegram.pushbot.messages.ScheduleMessages;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public final class Commands {
     private final PushBot pushBot;
     private final PushTimeMenu pushTimeMenu;
     private final GroupServiceImpl groupService;
+    private final ScheduleMessages scheduleMessages;
 
     static {
         commandsList.add("/setgroup");
@@ -36,19 +38,20 @@ public final class Commands {
         commandsList.add("/status");
         commandsList.add("/week");
         commandsList.add("/help");
-        commandsList.add("now");
+        commandsList.add("/now");
         commandsList.add("/next");
         commandsList.add("/prev");
     }
 
     @Autowired
-    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot, PushTimeMenu pushTimeMenu, GroupServiceImpl groupService) {
+    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot, PushTimeMenu pushTimeMenu, GroupServiceImpl groupService, ScheduleMessages scheduleMessages) {
         this.userService = userService;
         this.groupMenu = groupMenu;
         this.userStatusMenu = userStatusMenu;
         this.pushBot = pushBot;
         this.pushTimeMenu = pushTimeMenu;
         this.groupService = groupService;
+        this.scheduleMessages = scheduleMessages;
     }
 
 
@@ -88,8 +91,10 @@ public final class Commands {
                                     "/adminnotice - вкл сообщения от администрации\n" +
                                     "/status - инфо об аккаунте\n" +
                                     "/week - рассписание на неделю \n" +
-                                    "/now - рассписание на сегодня"));
-
+                                    "/now - рассписание на сегодня\n" +
+                                    "/next - \n" +
+                                    "/prev - \n"));
+                    break;
                 case "/week":
 
                     pushBot.executeMessage(
@@ -97,6 +102,15 @@ public final class Commands {
                                     createBold(user.getUserToken(),
                                             groupService.getByName(user.getSettings().getSelectedGroup())
                                                     .getScheduleForTelegram()));
+
+                    break;
+                case "/now":
+                    pushBot.executeMessage(
+                            scheduleMessages.getNow(message.getChatId(), user.getSettings().getSelectedGroup()));
+                    break;
+                case "/prev":
+                    break;
+                case "/next":
 
                     break;
                 default:

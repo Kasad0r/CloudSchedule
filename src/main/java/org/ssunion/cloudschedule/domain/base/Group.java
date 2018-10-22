@@ -86,19 +86,24 @@ public class Group {
         List<String> list = new ArrayList<>();
         for (Day d : this.weekSchedule
         ) {
-            result.append("<b>").append(d.getDayName()).append("</b>").append("\n");
+            result.append("<b>").append(d.getDayName()).append("</b>");
             for (Lesson l : d.getLessons()) {
+                result.append("\n");
                 result.append("<i>").append(l.getStartTime()).append("</i>\n");
                 if (l.getUpperWeek().getName() != null && !l.getUpperWeek().getName().isEmpty()) {
-                    result.append("<b>").append(l.getUpperWeek().getName()).append("    ")
+                    result.append("<b>").append(l.getUpperWeek().getName()).append("\t")
                             .append(l.getUpperWeek().getTeacher()).append("</b>\n");
+                } else {
+                    result.append("<b> Нижняя неделя </b>⬇️");
                 }
                 if (l.getDownWeek().getName() != null && !l.getDownWeek().getName().isEmpty()) {
-                    result.append("<b>").append(l.getUpperWeek().getName()).append("    ")
-                            .append(l.getUpperWeek().getTeacher()).append("</b>\n");
+                    result.append("<b>").append(l.getDownWeek().getName()).append("\t")
+                            .append(l.getDownWeek().getTeacher()).append("</b>\n");
+                } else {
+                    result.append("<b> Верхняя неделя ⬆️</b>");
                 }
-                result.append("****************\n");
             }
+            result.append("\n");
             list.add(result.toString());
             result = new StringBuilder();
         }

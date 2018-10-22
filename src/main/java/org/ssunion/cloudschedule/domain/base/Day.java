@@ -75,4 +75,27 @@ public class Day {
                 ", lessons=" + lessons +
                 '}';
     }
+
+    public String getScheduleForTelegram() {
+        StringBuilder result = new StringBuilder();
+        result.append("<b>").append(this.getDayName()).append("</b>");
+        for (Lesson l : this.getLessons()) {
+            result.append("\n");
+            result.append("<i>").append(l.getStartTime()).append("</i>\n");
+            if (l.getUpperWeek().getName() != null && !l.getUpperWeek().getName().isEmpty()) {
+                result.append("<b>").append(l.getUpperWeek().getName()).append("    ")
+                        .append(l.getUpperWeek().getTeacher()).append("</b>\n");
+            } else {
+                result.append("<b> Нижняя неделя </b>⬇️");
+            }
+            if (l.getDownWeek().getName() != null && !l.getDownWeek().getName().isEmpty()) {
+                result.append("<b>").append(l.getDownWeek().getName()).append("    ")
+                        .append(l.getDownWeek().getTeacher()).append("</b>\n");
+            } else {
+                result.append("<b> Верхняя неделя ⬆️</b>");
+            }
+        }
+        result.append("\n");
+        return result.toString();
+    }
 }
