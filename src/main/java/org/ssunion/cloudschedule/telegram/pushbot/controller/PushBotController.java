@@ -50,7 +50,6 @@ public class PushBotController {
     }
 
     public void performUpdate(Update update) {
-        System.out.println(userService.getUsersBySelectedGroupAndNotice("152", true));
         if (update.hasMessage()) {
             if (update.getMessage().hasText()) {
                 String messageText = update.getMessage().getText();

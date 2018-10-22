@@ -109,9 +109,12 @@ public final class Commands {
                             scheduleMessages.getNow(message.getChatId(), user.getSettings().getSelectedGroup()));
                     break;
                 case "/prev":
+                    pushBot.executeMessage(
+                            scheduleMessages.getPrev(message.getChatId(), user.getSettings().getSelectedGroup()));
                     break;
                 case "/next":
-
+                    pushBot.executeMessage(
+                            scheduleMessages.getNext(message.getChatId(), user.getSettings().getSelectedGroup()));
                     break;
                 default:
                     break;
