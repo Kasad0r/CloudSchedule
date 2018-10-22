@@ -572,26 +572,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Application.Parse">
     <configuration name="Parse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.parse.Parse" />
       <module name="cloudschedule" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.ssunion.cloudschedule.parse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PushMessages" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.telegram.pushbot.controller.PushMessages" />
-      <module name="cloudschedule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ssunion.cloudschedule.telegram.pushbot.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -610,6 +597,22 @@
       <option name="PACKAGE_NAME" value="org.ssunion.cloudschedule.date" />
       <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.date.DateTest" />
       <option name="METHOD_NAME" value="dayOfWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Parse.s" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudschedule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ssunion.cloudschedule.parse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ssunion.cloudschedule.parse" />
+      <option name="MAIN_CLASS_NAME" value="org.ssunion.cloudschedule.parse.Parse" />
+      <option name="METHOD_NAME" value="s" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -658,18 +661,18 @@
     <list>
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Application.Parse" />
-      <item itemvalue="Application.PushMessages" />
       <item itemvalue="JUnit.ScheduleMessages.test" />
       <item itemvalue="JUnit.Parse.test" />
       <item itemvalue="JUnit.DateTest.dayOfWeek" />
+      <item itemvalue="JUnit.Parse.s" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Parse.s" />
+        <item itemvalue="Application.Parse" />
         <item itemvalue="JUnit.DateTest.dayOfWeek" />
         <item itemvalue="JUnit.Parse.test" />
         <item itemvalue="JUnit.ScheduleMessages.test" />
-        <item itemvalue="Application.PushMessages" />
-        <item itemvalue="Application.Parse" />
       </list>
     </recent_temporary>
   </component>

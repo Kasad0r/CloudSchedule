@@ -1,52 +1,42 @@
 package org.ssunion.cloudschedule.telegram.pushbot;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.ssunion.cloudschedule.telegram.pushbot.logic.controller.MainController;
+import org.ssunion.cloudschedule.telegram.pushbot.controller.PushBotController;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.Serializable;
 import java.util.List;
+
+/**
+ * @author kasad0r
+ */
 @Component
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class PushBot extends TelegramLongPollingBot {
-    private static PushBot pushBot = new PushBot();
-    //@Value("${adminbot.username}")
-    private String username="kisit_administration_bot";
-    //@Value("${adminbot.token}")
-    private String token = "652862402:AAGQFVakTwmj3dtLn-dLlh9qR3xuga8a8WQ";
-    private MainController mainController = MainController.getInstance();
+
+    @Value("${adminbot.username}")
+    private String username;
+    @Value("${adminbot.token}")
+    private String token;
+    private PushBotController pushBotController;
+
+    @Autowired
+    public void setPushBotController(PushBotController pushBotController) {
+        this.pushBotController = pushBotController;
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
-        mainController.executeUpdate(update);
-    }
-
-
-    public void push(BotApiMethod<Message> message) {
-        try {
-            execute(message);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void push(List<BotApiMethod<Message>> messages) {
-        messages.forEach(this::push);
-    }
-
-    public void updateMessage(BotApiMethod<Serializable> update) {
-        try {
-            execute(update);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private PushBot() {
-
+        pushBotController.performUpdate(update);
     }
 
     @Override
@@ -59,7 +49,23 @@ public class PushBot extends TelegramLongPollingBot {
         return token;
     }
 
-    public static PushBot getInstance() {
-        return pushBot;
+    public void executeMessage(BotApiMethod<Message> sendMessage) {
+        try {
+            execute(sendMessage);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateMessage(EditMessageText editMessageText) {
+        try {
+            execute(editMessageText);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void executeMessage(List<SendMessage> sendMessages) {
+        sendMessages.forEach(this::executeMessage);
     }
 }

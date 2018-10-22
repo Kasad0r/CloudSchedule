@@ -2,36 +2,51 @@ package org.ssunion.cloudschedule.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.ssunion.cloudschedule.domain.*;
-import org.ssunion.cloudschedule.repo.GroupRepo;
+import org.ssunion.cloudschedule.domain.base.Group;
+import org.ssunion.cloudschedule.domain.base.GroupWrapper;
+import org.ssunion.cloudschedule.scheduler.ScheduleController;
+import org.ssunion.cloudschedule.service.impl.GroupServiceImpl;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author kasad0r
+ */
 @Controller
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class MainController {
+    private final
+    GroupServiceImpl groupService;
+    private final
+    ScheduleController scheduleController;
+
     @Autowired
-    GroupRepo groupRepo;
+    public MainController(GroupServiceImpl groupService, ScheduleController scheduleController) {
+        this.groupService = groupService;
+        this.scheduleController = scheduleController;
+    }
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-        /*Group group = new Group();
+
+       /* Group group = new Group();
         group.setGroupName("152");
         group.setLastUpdate(LocalDate.now().toString());
         Day day = new Day();
-        day.setDayName("Monday");
+        day.setDayName("Пн");
         Lesson lesson = new Lesson();
         Flasher down = new Flasher();
-        down.setName("Astronomy");
-        down.setTeacher("Anastasia");
+        down.setName("Астрономия");
+        down.setTeacher("Настя");
         Flasher upper = new Flasher();
-        upper.setTeacher("Igor");
-        upper.setName("Popcultura");
+        upper.setTeacher("Игорь");
+        upper.setName("Попкультура");
         lesson.setDownWeek(down);
         lesson.setUpperWeek(upper);
         lesson.setStartTime("13:15");
@@ -56,7 +71,7 @@ public class MainController {
         lesson6.setUpperWeek(upper);
         lesson6.setStartTime("15:41");
         Day day2 = new Day();
-        day2.setDayName("Tuesday");
+        day2.setDayName("Вт");
         day2.setLessons(Arrays.asList(lesson4, lesson5, lesson6));
         day.setLessons(Arrays.asList(lesson, lesson2, lesson3));
         Day day3 = new Day();
@@ -76,9 +91,9 @@ public class MainController {
         lesson10.setDownWeek(down);
         lesson10.setUpperWeek(upper);
         lesson10.setStartTime("15:41");
-        day3.setDayName("Friday");
+        day3.setDayName("Пт");
         Day day4 = new Day();
-        day4.setDayName("Wednesday");
+        day4.setDayName("Ср");
         Lesson lesson11 = new Lesson();
         lesson11.setDownWeek(down);
         lesson11.setUpperWeek(upper);
@@ -112,18 +127,19 @@ public class MainController {
         lesson18.setUpperWeek(upper);
         lesson18.setStartTime("15:41");
         Day day5 = new Day();
-        day5.setDayName("Thirthday");
+        day5.setDayName("Чт");
         day5.setLessons(Arrays.asList(lesson15, lesson16, lesson17, lesson18));
         day4.setLessons(Arrays.asList(lesson11, lesson12, lesson13, lesson14));
         day3.setLessons(Arrays.asList(lesson7, lesson8, lesson9, lesson10));
         group.setWeekSchedule(Arrays.asList(day, day2, day3, day4, day5));
         System.out.println(group);
-        groupRepo.save(group);*/
-        Iterable<Group> groups = groupRepo.findAll();
+        groupService.addGroup(group);
+         scheduleController.updateSchedule(group);*/
+        Iterable<Group> groups = groupService.getAll();
         List<GroupWrapper> groupWrapperList = new ArrayList<>();
         GroupWrapper groupWrapper = new GroupWrapper();
         groupWrapper.setGroupList(groups);
-        groupWrapper.setCourseName("3 course");
+        groupWrapper.setCourseName("3 курс");
         groupWrapperList.add(groupWrapper);
         groupWrapperList.add(groupWrapper);
         model.put("courses", groupWrapperList);

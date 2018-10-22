@@ -1,8 +1,12 @@
-package org.ssunion.cloudschedule.domain;
+package org.ssunion.cloudschedule.domain.base;
 
 
 import javax.persistence.*;
+import java.util.Objects;
 
+/**
+ * @author kasad0r
+ */
 @Entity
 @Table(name = "flashers")
 public class Flasher {
@@ -52,5 +56,23 @@ public class Flasher {
                 ", name='" + name + '\'' +
                 ", teacher='" + teacher + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Flasher flasher = (Flasher) o;
+        return Objects.equals(name, flasher.name) &&
+                Objects.equals(teacher, flasher.teacher);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, teacher);
     }
 }

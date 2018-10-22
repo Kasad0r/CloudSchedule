@@ -344,7 +344,7 @@
                 statusLabel.innerHTML = 'Пар нет братан, отдыхай!'
             }
             else {
-                statusLabel.innerHTML = phrases[Math.floor(Math.random() * phrases.length)];
+                statusLabel.innerHTML = phrases[ Math.floor(Math.random() * phrases.length)];
             }
         }
     }

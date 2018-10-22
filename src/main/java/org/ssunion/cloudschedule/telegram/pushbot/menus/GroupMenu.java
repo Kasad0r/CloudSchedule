@@ -1,7 +1,9 @@
 package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
-import org.ssunion.cloudschedule.domain.Group;
-import org.ssunion.cloudschedule.repo.GroupRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.ssunion.cloudschedule.domain.base.Group;
+import org.ssunion.cloudschedule.service.impl.GroupServiceImpl;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -11,11 +13,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
+@Component
 public class GroupMenu {
-    private static GroupRepo gr;
-    private static PushBot pushBot = PushBot.getInstance();
+    private static GroupServiceImpl groupService;
+    private static PushBot pushBot;
 
-    public static void executeStage1(long chatId) {
+    @Autowired
+    public GroupMenu(GroupServiceImpl groupService, PushBot pushBot) {
+        GroupMenu.groupService = groupService;
+        GroupMenu.pushBot = pushBot;
+    }
+
+    public void executeStage1(long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Выберите ваш курс: ");
@@ -28,11 +40,12 @@ public class GroupMenu {
         keyboardMarkup.setKeyboard(keyboardList);
         message.disableNotification();
         message.setReplyMarkup(keyboardMarkup);
-        pushBot.push(message);
+        pushBot.executeMessage(message);
     }
 
-    public static void getGroupListByCourse(String course, long chatId) {
-        List<Group> groups = gr.findByGroupNameStartingWith(course);
+    public void getGroupListByCourse(String course, long chatId) {
+        List<Group> groups = groupService.getByCource(course);
+        System.out.println(groups);
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
@@ -43,7 +56,8 @@ public class GroupMenu {
         }
         keyboard.add(Collections.singletonList(new InlineKeyboardButton().setText("Её нет в списке").setCallbackData("nogroup")));
         markup.setKeyboard(keyboard);
+        sendMessage.setReplyMarkup(markup);
         sendMessage.setText("Выберите группу: ");
-        pushBot.push(sendMessage);
+        pushBot.executeMessage(sendMessage);
     }
 }

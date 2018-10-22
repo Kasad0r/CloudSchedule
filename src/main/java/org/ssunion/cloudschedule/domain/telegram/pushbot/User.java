@@ -1,14 +1,19 @@
-package org.ssunion.cloudschedule.telegram.pushbot.domain;
+package org.ssunion.cloudschedule.domain.telegram.pushbot;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
 
+/**
+ * @author kasad0r
+ */
 @Entity
 @Table(name = "telegram_user")
-public class User {
+public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "token")
+    @Column()
     private long userToken;
     @Column(name = "user_name")
     private String username;
@@ -19,7 +24,7 @@ public class User {
     @Column(name = "triggers")
     @Enumerated(EnumType.STRING)
     private Trigger trigger = Trigger.NONE;
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "settings_id")
     private Settings settings;
 
@@ -76,6 +81,9 @@ public class User {
     }
 
     public Settings getSettings() {
+        if (settings == null) {
+            settings = new Settings();
+        }
         return settings;
     }
 
@@ -102,5 +110,27 @@ public class User {
                 ", trigger=" + trigger +
                 ", settings=" + settings +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return userToken == user.userToken &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(firstname, user.firstname) &&
+                Objects.equals(lastname, user.lastname) &&
+                trigger == user.trigger &&
+                Objects.equals(settings, user.settings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userToken, username, firstname, lastname, trigger, settings);
     }
 }

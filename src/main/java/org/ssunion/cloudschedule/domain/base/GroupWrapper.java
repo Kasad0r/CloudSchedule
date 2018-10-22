@@ -1,8 +1,11 @@
-package org.ssunion.cloudschedule.domain;
+package org.ssunion.cloudschedule.domain.base;
 
+/**
+ * @author kasad0r
+ */
 public class GroupWrapper {
-    private  String courseName;
-   private Iterable<Group> groupList;
+    private String courseName;
+    private Iterable<Group> groupList;
 
     public Iterable<Group> getGroupList() {
         return groupList;
@@ -26,4 +29,5 @@ public class GroupWrapper {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
 }

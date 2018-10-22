@@ -1,5 +1,7 @@
 package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -9,8 +11,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author kasad0r
+ */
+@Component
 public class PushTimeMenu {
-    public static void execute(long chatId) {
+
+    private final PushBot pushBot;
+
+    @Autowired
+    public PushTimeMenu(PushBot pushBot) {
+        this.pushBot = pushBot;
+    }
+
+    public void execute(long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Выберите время для отправки расписания: ");
@@ -24,6 +38,6 @@ public class PushTimeMenu {
         keyboardMarkup.setKeyboard(keyboardList);
         message.disableNotification();
         message.setReplyMarkup(keyboardMarkup);
-        PushBot.getInstance().push(message);
+        pushBot.executeMessage(message);
     }
 }
