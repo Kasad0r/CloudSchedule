@@ -58,7 +58,7 @@ public class PushBotController {
                 if (messageText != null && !messageText.isEmpty()) {
                     if ("/start".equals(messageText)) {
                         createUser(update.getMessage());
-                        pushBot.executeMessage(MessageFactory.create(chatId, "Добро пожаловать, вы были зарегистрированы"));
+                        pushBot.executeMessage(MessageFactory.createBold(chatId, "Добро пожаловать, вы были зарегистрированы"));
                     }
                     if (userService.checkUser(chatId)) {
                         commands.checkCommand(update.getMessage());

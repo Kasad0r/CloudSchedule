@@ -2,6 +2,7 @@ package org.ssunion.cloudschedule.domain.base;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,7 +17,7 @@ public class Group {
     private Long id;
     private String groupName;
     @ElementCollection(targetClass = Day.class, fetch = FetchType.EAGER)
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Day> weekSchedule;
     private String lastUpdate;
 
@@ -73,5 +74,34 @@ public class Group {
     @Override
     public int hashCode() {
         return Objects.hash(groupName, weekSchedule, lastUpdate);
+    }
+
+    @Override
+    public String toString() {
+        return null;
+    }
+
+    public List<String> getScheduleForTelegram() {
+        StringBuilder result = new StringBuilder();
+        List<String> list = new ArrayList<>();
+        for (Day d : this.weekSchedule
+        ) {
+            result.append("<b>").append(d.getDayName()).append("</b>").append("\n");
+            for (Lesson l : d.getLessons()) {
+                result.append("<i>").append(l.getStartTime()).append("</i>\n");
+                if (l.getUpperWeek().getName() != null && !l.getUpperWeek().getName().isEmpty()) {
+                    result.append("<b>").append(l.getUpperWeek().getName()).append("    ")
+                            .append(l.getUpperWeek().getTeacher()).append("</b>\n");
+                }
+                if (l.getDownWeek().getName() != null && !l.getDownWeek().getName().isEmpty()) {
+                    result.append("<b>").append(l.getUpperWeek().getName()).append("    ")
+                            .append(l.getUpperWeek().getTeacher()).append("</b>\n");
+                }
+                result.append("****************\n");
+            }
+            list.add(result.toString());
+            result = new StringBuilder();
+        }
+        return list;
     }
 }

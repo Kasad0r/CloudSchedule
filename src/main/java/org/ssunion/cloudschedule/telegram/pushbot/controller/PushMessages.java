@@ -33,7 +33,7 @@ public class PushMessages {
     public boolean forGroupImportant(String groupName, String message) {
         List<User> users = userService.getUsersBySelectedGroup(groupName);
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
             return true;
         } else {
             return false;
@@ -48,7 +48,7 @@ public class PushMessages {
     public boolean forGroupInconsiderable(String groupName, String message) {
         List<User> users = userService.getUsersBySelectedGroupAndNotice(groupName, true);
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
             return true;
         } else {
             return false;
@@ -63,7 +63,7 @@ public class PushMessages {
     public boolean forCourseImportant(String courseName, String message) {
         List<User> users = userService.getUsersByCourse(courseName);
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
             return true;
         } else {
             return false;
@@ -78,7 +78,7 @@ public class PushMessages {
     public void forCourseInconsiderable(String courseName, String message) {
         List<User> users = userService.getUsersByCourseAndNotice(courseName, true);
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
         }
     }
 //TODO
@@ -90,11 +90,13 @@ public class PushMessages {
     public void forAllImportant(String groupName, String message) {
         List<User> users = userService.findAll();
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
         }
     }
 //TODO
-
+/*public static void main(String[] args) {
+    System.out.println("Кирилл пидор");
+}*/
     /**
      * @param groupName
      * @param message
@@ -102,7 +104,7 @@ public class PushMessages {
     public void forAllInconsiderable(String groupName, String message) {
         List<User> users = userService.getUsersByAdminNotice(true);
         if (users != null && !users.isEmpty()) {
-            pushBot.executeMessage(MessageFactory.create(users, message));
+            pushBot.executeMessage(MessageFactory.createBold(users, message));
         }
 
     }

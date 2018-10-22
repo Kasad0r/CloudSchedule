@@ -54,7 +54,7 @@ public final class Trigges {
                     user.setTrigger(Trigger.NONE);
                     userService.addUser(user);
                 } else if (data.equals("nogroup")) {
-                    pushBot.executeMessage(MessageFactory.create(chatId, "Сожалеем :("));
+                    pushBot.executeMessage(MessageFactory.createBold(chatId, "Сожалеем :("));
                     pushBot.updateMessage(
                             new EditMessageText()
                                     .setMessageId(update.getCallbackQuery().getMessage().getMessageId())

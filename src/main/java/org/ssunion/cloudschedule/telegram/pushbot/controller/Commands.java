@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.ssunion.cloudschedule.domain.telegram.pushbot.Trigger;
 import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
+import org.ssunion.cloudschedule.service.impl.GroupServiceImpl;
 import org.ssunion.cloudschedule.service.impl.UserServiceImpl;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
 import org.ssunion.cloudschedule.telegram.pushbot.menus.GroupMenu;
@@ -26,6 +27,7 @@ public final class Commands {
     private final UserStatusMenu userStatusMenu;
     private final PushBot pushBot;
     private final PushTimeMenu pushTimeMenu;
+    private final GroupServiceImpl groupService;
 
     static {
         commandsList.add("/setgroup");
@@ -35,15 +37,18 @@ public final class Commands {
         commandsList.add("/week");
         commandsList.add("/help");
         commandsList.add("now");
+        commandsList.add("/next");
+        commandsList.add("/prev");
     }
 
     @Autowired
-    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot, PushTimeMenu pushTimeMenu) {
+    public Commands(UserServiceImpl userService, GroupMenu groupMenu, UserStatusMenu userStatusMenu, PushBot pushBot, PushTimeMenu pushTimeMenu, GroupServiceImpl groupService) {
         this.userService = userService;
         this.groupMenu = groupMenu;
         this.userStatusMenu = userStatusMenu;
         this.pushBot = pushBot;
         this.pushTimeMenu = pushTimeMenu;
+        this.groupService = groupService;
     }
 
 
@@ -65,11 +70,11 @@ public final class Commands {
                 case "/adminnotice":
                     if (user.getSettings().isAdminNotice()) {
                         user.getSettings().setAdminNotice(!user.getSettings().isAdminNotice());
-                        pushBot.executeMessage(MessageFactory.create(message.getChatId(), "Сообщения от администрации выключены"));
+                        pushBot.executeMessage(MessageFactory.createBold(message.getChatId(), "Сообщения от администрации выключены"));
                         userService.addUser(user);
                     } else {
                         user.getSettings().setAdminNotice(!user.getSettings().isAdminNotice());
-                        pushBot.executeMessage(MessageFactory.create(message.getChatId(), "Сообщения от администрации включены"));
+                        pushBot.executeMessage(MessageFactory.createBold(message.getChatId(), "Сообщения от администрации включены"));
                         userService.addUser(user);
                     }
                     break;
@@ -77,13 +82,23 @@ public final class Commands {
                     userStatusMenu.execute(user);
                     break;
                 case "/help":
-                    pushBot.executeMessage(MessageFactory.create(message.getChatId(),
+                    pushBot.executeMessage(MessageFactory.createBold(message.getChatId(),
                             "/setgroup - выбор группы\n" +
                                     "/timetopush - время отправки рассписания\n" +
                                     "/adminnotice - вкл сообщения от администрации\n" +
                                     "/status - инфо об аккаунте\n" +
                                     "/week - рассписание на неделю \n" +
                                     "/now - рассписание на сегодня"));
+
+                case "/week":
+
+                    pushBot.executeMessage(
+                            MessageFactory.
+                                    createBold(user.getUserToken(),
+                                            groupService.getByName(user.getSettings().getSelectedGroup())
+                                                    .getScheduleForTelegram()));
+
+                    break;
                 default:
                     break;
             }

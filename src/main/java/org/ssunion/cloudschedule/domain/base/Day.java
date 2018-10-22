@@ -18,7 +18,7 @@ public class Day {
 
     private String dayName;
     @ElementCollection(targetClass = Lesson.class, fetch = FetchType.EAGER)
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Lesson> lessons;
 
     public Day() {

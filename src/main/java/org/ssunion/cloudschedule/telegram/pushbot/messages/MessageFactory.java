@@ -10,11 +10,19 @@ import java.util.stream.Collectors;
  * @author kasad0r
  */
 public class MessageFactory {
-    public static SendMessage create(long chatId, String message) {
+    public static SendMessage createBold(long chatId, String message) {
         return new SendMessage().setChatId(chatId).setText(String.format("<b>%s</b>", message)).setParseMode("html");
     }
 
-    public static List<SendMessage> create(List<User> users, String message) {
-        return users.stream().map(u -> create(u.getUserToken(), message)).collect(Collectors.toList());
+    public static List<SendMessage> createBold(List<User> users, String message) {
+        return users.stream().map(u -> createBold(u.getUserToken(), message)).collect(Collectors.toList());
+    }
+
+    public static List<SendMessage> createBold(long chatId, List<String> messages) {
+        return messages.stream().map(m -> create(chatId, m)).collect(Collectors.toList());
+    }
+
+    public static SendMessage create(long chatId, String message) {
+        return new SendMessage().setChatId(chatId).setText(message).setParseMode("html");
     }
 }
