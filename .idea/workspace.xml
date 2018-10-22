@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34fa52ca-3541-4ad2-8ed5-a78761dd8049" name="Default Changelist" comment="True shit">
+    <list default="true" id="34fa52ca-3541-4ad2-8ed5-a78761dd8049" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/.~lock.shedule.xls#" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/shedule.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shedule.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.~lock.shedule.xls#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ssunion/cloudschedule/parse/Parse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ssunion/cloudschedule/parse/Parse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/shedule.xls" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/shedule.xls" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,21 +20,22 @@
     <session id="-1851593908">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ftl" value="2" />
-          <entry key="java" value="9" />
+          <entry key="java" value="11" />
           <entry key="properties" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -41,21 +43,21 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="FTL" value="2" />
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="11" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1918" />
+          <entry key="java" value="2745" />
           <entry key="txt" value="142" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1918" />
+          <entry key="JAVA" value="2745" />
           <entry key="PLAIN_TEXT" value="142" />
           <entry key="XML" value="1" />
         </counts>
@@ -76,8 +78,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="1368">
+              <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/text/SimpleDateFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7875">
+              <caret line="579" column="50" selection-start-line="579" selection-start-column="50" selection-end-line="579" selection-end-column="50" />
+              <folding>
+                <element signature="e#23443#23444#0" expanded="true" />
+                <element signature="e#23515#23516#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Locale.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="2297" column="16" selection-start-line="2297" selection-start-column="16" selection-end-line="2297" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -246,14 +273,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540154361699" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540210453636" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -338,7 +365,8 @@
       <workItem from="1539350987619" duration="734000" />
       <workItem from="1539382244988" duration="4419000" />
       <workItem from="1539782905951" duration="800000" />
-      <workItem from="1540150740819" duration="3505000" />
+      <workItem from="1540150740819" duration="6076000" />
+      <workItem from="1540203727569" duration="5367000" />
     </task>
     <task id="LOCAL-00001" summary="Write schedule for 472 group and test it in class Parse.">
       <created>1539386938134</created>
@@ -347,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539386938135</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="True shit">
+      <created>1540154540075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540154540075</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -365,13 +400,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19415000" />
+    <option name="totallyTimeSpent" value="27353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26674044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27006087" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -381,7 +416,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -414,7 +449,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Parse complete.&#10;Test it in class &quot;Parse&quot; in main thread." />
     <MESSAGE value="Write schedule for 472 group and test it in class Parse." />
-    <option name="LAST_COMMIT_MESSAGE" value="Write schedule for 472 group and test it in class Parse." />
+    <MESSAGE value="True shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="True shit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
@@ -434,6 +470,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="119" column="34" selection-start-line="57" selection-start-column="8" selection-end-line="119" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -441,10 +484,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/controller/MainController.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/text/SimpleDateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="119" column="34" selection-start-line="57" selection-start-column="8" selection-end-line="119" selection-end-column="34" />
+        <state relative-caret-position="7875">
+          <caret line="579" column="50" selection-start-line="579" selection-start-column="50" selection-end-line="579" selection-end-column="50" />
+          <folding>
+            <element signature="e#23443#23444#0" expanded="true" />
+            <element signature="e#23515#23516#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -491,10 +538,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Locale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="2297" column="16" selection-start-line="2297" selection-start-column="16" selection-end-line="2297" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ssunion/cloudschedule/parse/Parse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="1368">
+          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
