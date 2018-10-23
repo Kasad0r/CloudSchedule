@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
     <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
     <style>
@@ -89,8 +89,8 @@
                     <footer class="blockquote-footer">Говорят что рассписание у нас рандомится. <cite
                             title="Source Title">Иногда мы сами в это верим...</cite>
                     </footer>
+                    <div id="status_label"><h2>loading...</h2></div>
                     <canvas id="drawing_canvas" class="mb-5"></canvas>
-                    <div id="status_label">loading...</div>
                 </blockquote>
             </section>
             <#list courses as course>
@@ -436,7 +436,7 @@
             ctx.fillStyle = '#1B5E20';
             ctx.arc(0, 0, this.pRadius + 24, 0, TWO_PI);
             ctx.fill();
-            ctx.fillRect(-12, 0, 24, 400);
+
 
             ctx.rotate(-this.body.angle);
 

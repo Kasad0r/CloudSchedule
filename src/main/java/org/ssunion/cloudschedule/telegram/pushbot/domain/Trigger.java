@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.domain.telegram.pushbot;
+package org.ssunion.cloudschedule.telegram.pushbot.domain;
 
 import java.io.Serializable;
 

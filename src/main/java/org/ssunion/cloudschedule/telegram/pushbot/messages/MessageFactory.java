@@ -1,6 +1,6 @@
 package org.ssunion.cloudschedule.telegram.pushbot.messages;
 
-import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
 import java.util.List;

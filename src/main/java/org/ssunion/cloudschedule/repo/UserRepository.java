@@ -1,7 +1,7 @@
 package org.ssunion.cloudschedule.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package org.ssunion.cloudschedule.service;
 
-import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 
 import java.util.List;
 

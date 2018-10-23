@@ -2,8 +2,8 @@ package org.ssunion.cloudschedule.telegram.pushbot.menus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.ssunion.cloudschedule.domain.telegram.pushbot.User;
 import org.ssunion.cloudschedule.telegram.pushbot.PushBot;
+import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
 /**
