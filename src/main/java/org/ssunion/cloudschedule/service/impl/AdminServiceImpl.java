@@ -43,6 +43,6 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin getByToken(long token) {
-        return adminRepository.getAdminByUserToken(token);
+        return adminRepository.findFirstByUserToken(token);
     }
 }

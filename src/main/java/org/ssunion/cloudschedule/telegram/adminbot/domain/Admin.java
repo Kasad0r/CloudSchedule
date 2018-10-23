@@ -6,22 +6,22 @@ import javax.persistence.*;
  * @author kasad0r
  */
 @Entity
-@Table(name = "bot_admins")
+@Table(name = "botadmins")
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column()
     private long userToken;
-    @Column(name = "user_name")
+    @Column(name = "usernames")
     private String username;
     @Column(name = "first")
     private String firstname;
     @Column(name = "last")
     private String lastname;
-    @Column(name = "phone_number")
+    @Column(name = "phonenumber")
     private String phoneNumber;
-    @Column(name = "invited_by")
+    @Column(name = "invitedby")
     private long invitedBy;
     @Column(name = "tiggers")
     @Enumerated(EnumType.STRING)
@@ -93,5 +93,19 @@ public class Admin {
 
     public void setAdminTrigger(AdminTrigger adminTrigger) {
         this.adminTrigger = adminTrigger;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", userToken=" + userToken +
+                ", username='" + username + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", invitedBy=" + invitedBy +
+                ", adminTrigger=" + adminTrigger +
+                '}';
     }
 }

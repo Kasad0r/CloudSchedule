@@ -69,6 +69,7 @@ public class PushBotController {
         }
     }
 
+    //TODO ЕСЛИ ЗАРЕГАНЫЙ ЮЗЕР ПИШЕТ СТАРТ ВЫЛЕЗАЕТ КАКОЕ-ТО ДЕРЬМО
     private void createUser(Message message) {
         User user = new User();
         user.setUsername(message.getFrom().getUserName());

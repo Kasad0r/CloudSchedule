@@ -89,9 +89,8 @@
                     <footer class="blockquote-footer">Говорят что рассписание у нас рандомится. <cite
                             title="Source Title">Иногда мы сами в это верим...</cite>
                     </footer>
-                    <div id="status_label" ><h2>loading...</h2></div>
+                    <div id="status_label"><h2>loading...</h2></div>
                     <canvas id="drawing_canvas" class="mb-5"></canvas>
-
                 </blockquote>
             </section>
             <#list courses as course>

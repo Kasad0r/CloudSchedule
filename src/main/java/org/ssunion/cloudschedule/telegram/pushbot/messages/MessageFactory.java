@@ -1,8 +1,10 @@
 package org.ssunion.cloudschedule.telegram.pushbot.messages;
 
 import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
+import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
+import java.io.File;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,5 +26,14 @@ public class MessageFactory {
 
     public static SendMessage create(long chatId, String message) {
         return new SendMessage().setChatId(chatId).setText(message).setParseMode("html");
+    }
+
+    public static SendDocument createDocument(long chatId) {
+        SendDocument sendDocument = new SendDocument();
+        sendDocument.setDocument(new File("src/main/resources/exel_group_timetable_container/shedule.xls"));
+        sendDocument.setCaption("Останнє оновлення розкладу, рекомендуємо редагувати його або свою копію файлу");
+        sendDocument.setParseMode("html");
+        sendDocument.setChatId(chatId);
+        return sendDocument;
     }
 }

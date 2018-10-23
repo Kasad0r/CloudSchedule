@@ -23,9 +23,9 @@ import java.util.List;
 @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class PushBot extends TelegramLongPollingBot {
 
-    @Value("${adminbot.username}")
+    @Value("${pushbot.username}")
     private String username;
-    @Value("${adminbot.token}")
+    @Value("${pushbot.token}")
     private String token;
     private PushBotController pushBotController;
 

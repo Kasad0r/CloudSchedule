@@ -5,5 +5,16 @@ package org.ssunion.cloudschedule.telegram.adminbot.domain;
  */
 
 public enum AdminTrigger {
-
+    /**
+     *
+     */
+    NONE,
+    /**
+     *
+     */
+    MAINMENU,
+    /**
+     *
+     */
+    UpadateScheduleSTAGE1,
 }
