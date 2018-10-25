@@ -1,4 +1,4 @@
-package org.ssunion.cloudschedule.repo;
+package org.ssunion.cloudschedule.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.ssunion.cloudschedule.telegram.adminbot.domain.ActivationCode;
@@ -7,9 +7,7 @@ import org.ssunion.cloudschedule.telegram.adminbot.domain.ActivationCode;
  * @author kasad0r
  */
 public interface ActivationCodeRepository extends JpaRepository<ActivationCode, Long> {
-    /**
-     * @param UUID
-     * @return
-     */
-    ActivationCode findFirstByUUID(String UUID);
+
+    ActivationCode findActivationCodeByUuid(String uuid);
+
 }

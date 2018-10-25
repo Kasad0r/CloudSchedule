@@ -3,7 +3,7 @@ package org.ssunion.cloudschedule.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.ssunion.cloudschedule.domain.base.Group;
-import org.ssunion.cloudschedule.repo.GroupRepository;
+import org.ssunion.cloudschedule.repository.GroupRepository;
 import org.ssunion.cloudschedule.service.GroupService;
 
 import java.util.List;

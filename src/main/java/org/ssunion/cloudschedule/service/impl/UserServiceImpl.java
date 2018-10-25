@@ -2,7 +2,7 @@ package org.ssunion.cloudschedule.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.ssunion.cloudschedule.repo.UserRepository;
+import org.ssunion.cloudschedule.repository.UserRepository;
 import org.ssunion.cloudschedule.service.UserService;
 import org.ssunion.cloudschedule.telegram.pushbot.domain.User;
 

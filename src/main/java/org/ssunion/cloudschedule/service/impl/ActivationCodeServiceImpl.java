@@ -2,7 +2,7 @@ package org.ssunion.cloudschedule.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.ssunion.cloudschedule.repo.ActivationCodeRepository;
+import org.ssunion.cloudschedule.repository.ActivationCodeRepository;
 import org.ssunion.cloudschedule.service.ActivationCodeService;
 import org.ssunion.cloudschedule.telegram.adminbot.domain.ActivationCode;
 
@@ -14,16 +14,16 @@ import java.util.List;
 @Service
 public class ActivationCodeServiceImpl implements ActivationCodeService {
 
-    private final ActivationCodeRepository activationCodeRepository;
+    private ActivationCodeRepository activationCodeRepository;
 
     @Autowired
-    public ActivationCodeServiceImpl(ActivationCodeRepository activationCodeRepository) {
+    public void setActivationCodeRepository(ActivationCodeRepository activationCodeRepository) {
         this.activationCodeRepository = activationCodeRepository;
     }
 
     @Override
     public ActivationCode getByUUID(String UUID) {
-        return activationCodeRepository.findFirstByUUID(UUID);
+        return activationCodeRepository.findActivationCodeByUuid(UUID);
     }
 
     @Override

@@ -8,8 +8,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 /**
  * @author kasad0r
  */
-@Component
-public class MassageFactory {
+@Component()
+public class MessageFactory {
 
     private static AdminBot adminBot;
 
@@ -17,8 +17,13 @@ public class MassageFactory {
         adminBot.executeMessage(new SendMessage().setChatId(chatId).setText(message));
     }
 
+    public static void createBold(long chatId, String message) {
+        adminBot.executeMessage(new SendMessage().setChatId(chatId).setText("<b>" + message + "</b>"));
+    }
+
+
     @Autowired
     public void setAdminBot(AdminBot adminBot) {
-        MassageFactory.adminBot = adminBot;
+        MessageFactory.adminBot = adminBot;
     }
 }

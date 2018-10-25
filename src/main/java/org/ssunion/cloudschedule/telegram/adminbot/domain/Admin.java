@@ -21,11 +21,10 @@ public class Admin {
     private String lastname;
     @Column(name = "phonenumber")
     private String phoneNumber;
-    @Column(name = "invitedby")
-    private long invitedBy;
     @Column(name = "tiggers")
     @Enumerated(EnumType.STRING)
     private AdminTrigger adminTrigger;
+    private boolean activated;
 
     public Admin() {
 
@@ -79,14 +78,6 @@ public class Admin {
         this.phoneNumber = phoneNumber;
     }
 
-    public long getInvitedBy() {
-        return invitedBy;
-    }
-
-    public void setInvitedBy(long invitedBy) {
-        this.invitedBy = invitedBy;
-    }
-
     public AdminTrigger getAdminTrigger() {
         return adminTrigger;
     }
@@ -104,8 +95,15 @@ public class Admin {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", invitedBy=" + invitedBy +
                 ", adminTrigger=" + adminTrigger +
                 '}';
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
     }
 }

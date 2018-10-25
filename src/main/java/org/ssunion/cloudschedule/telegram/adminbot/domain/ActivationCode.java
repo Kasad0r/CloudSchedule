@@ -10,13 +10,14 @@ public class ActivationCode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String UUID;
+    @Column(name = "code")
+    private String uuid;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "whogenerate")
     private Admin generatedBy;
     private boolean activated;
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "whoactivate")
     private Admin activatedBy;
 
@@ -25,11 +26,19 @@ public class ActivationCode {
     }
 
     public String getUUID() {
-        return UUID;
+        return uuid;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUUID(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Admin getGeneratedBy() {

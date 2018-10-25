@@ -97,7 +97,7 @@
                 <#list course.groupList as group>
                 <section id="${group.groupName}">
                     <h1 class="text-center card-header bg-success text-white">${group.groupName}</h1>
-                        <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success" role="alert">
                         <h5>Last update: ${group.lastUpdate}</h5>
                     </div>
                     <div class="card-group">
