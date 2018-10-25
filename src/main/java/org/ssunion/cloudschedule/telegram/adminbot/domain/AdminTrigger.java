@@ -21,5 +21,10 @@ public enum AdminTrigger {
      *
      */
     UpdateScheduleSTAGE2,
+    /**
+     *
+     */
+    ACTIVATE,
+
 
 }

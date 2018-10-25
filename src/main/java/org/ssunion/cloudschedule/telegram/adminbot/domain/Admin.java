@@ -24,7 +24,7 @@ public class Admin {
     @Column(name = "tiggers")
     @Enumerated(EnumType.STRING)
     private AdminTrigger adminTrigger;
-    private boolean activated;
+    private boolean activated = false;
 
     public Admin() {
 

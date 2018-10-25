@@ -7,6 +7,7 @@ import org.ssunion.cloudschedule.service.impl.AdminServiceImpl;
 import org.ssunion.cloudschedule.telegram.adminbot.AdminBot;
 import org.ssunion.cloudschedule.telegram.adminbot.domain.ActivationCode;
 import org.ssunion.cloudschedule.telegram.adminbot.domain.Admin;
+import org.ssunion.cloudschedule.telegram.adminbot.domain.AdminTrigger;
 import org.ssunion.cloudschedule.telegram.adminbot.menus.MainMenu;
 import org.ssunion.cloudschedule.telegram.adminbot.menus.StartupMenu;
 import org.ssunion.cloudschedule.telegram.adminbot.messages.MessageFactory;
@@ -35,6 +36,7 @@ public class AuthController {
             admin.setLastname(update.getMessage().getFrom().getLastName());
             admin.setUserToken(update.getMessage().getChatId());
             admin.setUsername(update.getMessage().getFrom().getUserName());
+
             adminService.addAdmin(admin);
             adminBot.executeMessage(StartupMenu.get(update.getMessage().getChatId()));
         }
@@ -49,19 +51,25 @@ public class AuthController {
         Admin admin = adminService.getByToken(update.getMessage().getChatId());
         ActivationCode code = activationCodeService.getByUUID(update.getMessage().getText());
         if (admin.isActivated()) {
-            MessageFactory.create(update.getMessage().getChatId(), "Ваш аккаунт уже активирован");
+            MessageFactory.create(update.getMessage().getChatId(), "Ваш аккаунт вже активований");
         } else if (!admin.isActivated()) {
-            if (code.isActivated()) {
-                MessageFactory.create(update.getMessage().getChatId(), "Этот код уже был использован.");
-            } else if (!code.isActivated()) {
-                admin.setActivated(true);
-                code.setActivated(true);
-                code.setActivatedBy(admin);
-                adminService.updateAdmin(admin);
-                activationCodeService.editActivationCode(code);
-                MessageFactory.create(update.getMessage().getChatId(), "Поздравляем с активацией аккаунта");
-                adminBot.executeMessage(MainMenu.get(update.getMessage().getChatId()));
+            if (code != null) {
+                if (code.isActivated()) {
+                    MessageFactory.create(update.getMessage().getChatId(), "Цей код вже був використаний.");
+                } else if (!code.isActivated()) {
+                    admin.setActivated(true);
+                    admin.setAdminTrigger(AdminTrigger.MAINMENU);
+                    code.setActivated(true);
+                    code.setActivatedBy(admin);
+                    adminService.updateAdmin(admin);
+                    activationCodeService.editActivationCode(code);
+                    MessageFactory.createBold(update.getMessage().getChatId(), "Вітаємо з активацією акаунта!");
+                    adminBot.executeMessage(MainMenu.get(update.getMessage().getChatId()));
+                }
+            } else {
+                MessageFactory.createBold(update.getMessage().getChatId(), "Ви ввели недійсний код");
             }
+
         }
 
     }

@@ -18,7 +18,7 @@ public class MainMenu {
         KeyboardRow row2 = new KeyboardRow();
         row2.add("Створити повідомлення");
         KeyboardRow row3 = new KeyboardRow();
-        row3.add("Додати адміністратора");
+        row3.add("Сгенерувати код");
         KeyboardRow row4 = new KeyboardRow();
         row4.add("Інфо");
         replyKeyboardMarkup.setKeyboard(Arrays.asList(row1, row2, row3, row4));

@@ -18,7 +18,7 @@ public class MessageFactory {
     }
 
     public static void createBold(long chatId, String message) {
-        adminBot.executeMessage(new SendMessage().setChatId(chatId).setText("<b>" + message + "</b>"));
+        adminBot.executeMessage(new SendMessage().setChatId(chatId).setText("<b>" + message + "</b>").setParseMode("html"));
     }
 
 

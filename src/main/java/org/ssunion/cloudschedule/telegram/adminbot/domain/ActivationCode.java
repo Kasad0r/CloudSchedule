@@ -16,7 +16,7 @@ public class ActivationCode {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "whogenerate")
     private Admin generatedBy;
-    private boolean activated;
+    private boolean activated = false;
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "whoactivate")
     private Admin activatedBy;
