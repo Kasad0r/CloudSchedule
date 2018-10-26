@@ -1,6 +1,8 @@
 package org.ssunion.cloudschedule.telegram.adminbot.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author kasad0r
@@ -25,7 +27,10 @@ public class Admin {
     @Enumerated(EnumType.STRING)
     private AdminTrigger adminTrigger;
     private boolean activated = false;
-
+    @ElementCollection(fetch = FetchType.EAGER, targetClass = AdminMessage.class)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<AdminMessage> adminMessage = new ArrayList<>();
+    private long currentMessage;
     public Admin() {
 
     }
@@ -86,6 +91,14 @@ public class Admin {
         this.adminTrigger = adminTrigger;
     }
 
+    public List<AdminMessage> getAdminMessage() {
+        return adminMessage;
+    }
+
+    public void setAdminMessage(List<AdminMessage> adminMessage) {
+        this.adminMessage = adminMessage;
+    }
+
     @Override
     public String toString() {
         return "Admin{" +
@@ -105,5 +118,13 @@ public class Admin {
 
     public void setActivated(boolean activated) {
         this.activated = activated;
+    }
+
+    public long getCurrentMessage() {
+        return currentMessage;
+    }
+
+    public void setCurrentMessage(long currentMessage) {
+        this.currentMessage = currentMessage;
     }
 }

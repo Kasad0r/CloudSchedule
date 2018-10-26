@@ -8,4 +8,5 @@ import org.ssunion.cloudschedule.telegram.adminbot.domain.Admin;
  */
 public interface AdminRepository extends JpaRepository<Admin, Long> {
     Admin findFirstByUserToken(long token);
+
 }

@@ -8,29 +8,16 @@ import javax.persistence.*;
 @Entity
 public class ActivationCode {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name = "code")
     private String uuid;
-
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "whogenerate")
-    private Admin generatedBy;
+    private long generatedBy;
     private boolean activated = false;
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "whoactivate")
-    private Admin activatedBy;
+    private long activatedBy;
 
     public ActivationCode() {
 
-    }
-
-    public String getUUID() {
-        return uuid;
-    }
-
-    public void setUUID(String uuid) {
-        this.uuid = uuid;
     }
 
     public long getId() {
@@ -41,13 +28,6 @@ public class ActivationCode {
         this.id = id;
     }
 
-    public Admin getGeneratedBy() {
-        return generatedBy;
-    }
-
-    public void setGeneratedBy(Admin generatedBy) {
-        this.generatedBy = generatedBy;
-    }
 
     public boolean isActivated() {
         return activated;
@@ -57,11 +37,27 @@ public class ActivationCode {
         this.activated = activated;
     }
 
-    public Admin getActivatedBy() {
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public long getGeneratedBy() {
+        return generatedBy;
+    }
+
+    public void setGeneratedBy(long generatedBy) {
+        this.generatedBy = generatedBy;
+    }
+
+    public long getActivatedBy() {
         return activatedBy;
     }
 
-    public void setActivatedBy(Admin activatedBy) {
+    public void setActivatedBy(long activatedBy) {
         this.activatedBy = activatedBy;
     }
 }

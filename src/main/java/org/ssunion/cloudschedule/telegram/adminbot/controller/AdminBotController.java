@@ -33,8 +33,8 @@ public class AdminBotController {
                     }
                     messageTriggers.check(update);
                 } else if (authController.checkAdminRegistration(update)) {
-                    messageTriggers.check(update);
 
+                    messageTriggers.check(update);
                 }
 
             }

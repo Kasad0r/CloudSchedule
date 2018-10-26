@@ -25,6 +25,14 @@ public enum AdminTrigger {
      *
      */
     ACTIVATE,
+    /**
+     *
+     */
+    SendMessageSTAGE1,
+    /**
+     *
+     */
+    SendMessageSTAGE2,
 
 
 }

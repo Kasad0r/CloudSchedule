@@ -36,7 +36,6 @@ public class AuthController {
             admin.setLastname(update.getMessage().getFrom().getLastName());
             admin.setUserToken(update.getMessage().getChatId());
             admin.setUsername(update.getMessage().getFrom().getUserName());
-
             adminService.addAdmin(admin);
             adminBot.executeMessage(StartupMenu.get(update.getMessage().getChatId()));
         }
@@ -60,13 +59,13 @@ public class AuthController {
                     admin.setActivated(true);
                     admin.setAdminTrigger(AdminTrigger.MAINMENU);
                     code.setActivated(true);
-                    code.setActivatedBy(admin);
+                    code.setActivatedBy(admin.getUserToken());
                     adminService.updateAdmin(admin);
                     activationCodeService.editActivationCode(code);
                     MessageFactory.createBold(update.getMessage().getChatId(), "Вітаємо з активацією акаунта!");
                     adminBot.executeMessage(MainMenu.get(update.getMessage().getChatId()));
                 }
-            } else {
+            } else if (!update.getMessage().getText().equals("Активувати")) {
                 MessageFactory.createBold(update.getMessage().getChatId(), "Ви ввели недійсний код");
             }
 
